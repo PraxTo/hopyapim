@@ -511,7 +511,7 @@ html.tb-on .corner{opacity:0;pointer-events:none}
 .tb-il{text-decoration:none;color:#fff;font:700 13px Inter,sans-serif;padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#FF8A2A,#E8620C)}
 .tb-km.on,.tb-il.on{box-shadow:0 0 0 2px #141414}
 section[id],footer[id],.scr[id]{scroll-margin-top:0}
-#hakkinda,#faaliyetler,#lmf,#iletisim,#sahne{scroll-margin-top:64px}
+#hakkinda,#lmf,#iletisim{scroll-margin-top:64px}
 @media (max-width:1100px){.tb-nav a{padding:8px 10px;font-size:14px}.tb-km span{display:none}.tb-km{padding:4px}}
 @media (max-width:820px){.tb{height:56px;gap:10px;padding:0 0 0 14px}.tb-logo{width:38px;height:38px}.tb-r{display:none}.tb-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-right:14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 24px),transparent)}.tb-nav::-webkit-scrollbar{display:none}.tb-m{display:inline-block!important}.tb-km-m{color:#C8102E!important}.tb-il-m{color:#C2410C!important}.tb-nav a.on.tb-km-m,.tb-nav a.on.tb-il-m{color:#fff!important}}
 /*endtb*/
@@ -557,6 +557,34 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 .band .aw .cup{width:13px;height:13px;color:#E8890C}
 @media (max-width:999px){.band{grid-template-columns:repeat(6,minmax(0,1fr))!important}.band div{grid-column:span 2}.band div:nth-child(4),.band div:nth-child(5){grid-column:span 3}.band div:nth-child(4){border-left:0!important}}
 /*endb5*/
+/*ed*/
+.ed{background:#fff}
+.ed-w{max-width:1240px;margin:0 auto;padding:84px 32px 40px;display:flex;flex-direction:column;gap:28px;box-sizing:border-box}
+.ed-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px}
+.ed-k{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#FF7A1A}
+.ed h2{margin:0;font:900 clamp(40px,5vw,72px)/.95 Archivo,sans-serif;letter-spacing:-.03em;text-transform:uppercase}
+.ed-s{margin:0;max-width:380px;color:#6B6B6B}
+.mc-done{display:inline-block;margin-left:2px;padding:2px 8px;border-radius:999px;background:#141414;color:#fff;font-size:11px;letter-spacing:.1em}
+.ed-p{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;border-top:1px solid #DCDEE1;padding-top:22px}
+.ed-c{display:flex;align-items:baseline;gap:10px;padding:12px 18px;border:1px solid #DCDEE1;border-radius:12px;background:#F7F8F9}
+.ed-n{font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#FF7A1A}
+.ed-c b{font:800 18px Archivo,sans-serif;letter-spacing:-.01em}
+.ed-cta{margin-left:auto;display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#141414;font-weight:700;padding:12px 20px;border-radius:999px;border:1.5px solid #141414}
+.ed-cta:hover{background:#141414;color:#fff}
+@media (min-width:1000px){
+ .ed-w{height:100vh;min-height:620px;justify-content:center}
+ .ed .mc{grid-template-columns:auto 1fr!important;gap:44px!important;align-items:center!important}
+ .ed .mc-af{position:static!important;width:auto!important;height:calc(100vh - 430px);max-height:480px;min-height:220px}
+ .ed h2{font-size:clamp(36px,4.2vw,60px)}
+ .ed .mc-in h3{font-size:clamp(28px,3vw,44px)!important}
+ .ed .mc-in{gap:10px!important}
+ .ed .mc-l{margin-top:4px!important}
+ .ed-w{gap:22px;padding-bottom:28px}
+ .ed-p{padding-top:16px}
+}
+@media (min-width:1000px) and (max-height:760px){.ed-w{gap:18px;padding-top:76px}.ed .mc-t{display:none}.ed-s{display:none}}
+@media (max-width:820px){.ed-w{padding:72px 20px 56px}.ed-cta{margin-left:0}}
+/*ended*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -745,36 +773,26 @@ requestAnimationFrame(tick);
 </div>
 </section>
 
-<section id="faaliyetler" style="background: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 64px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Eğitimlerimiz</h2>
-<p style="margin: 0; max-width: 380px; color: #6B6B6B">Hop Atölye çatısı altında, sektörün içinden isimlerle eğitimler.</p>
+<section id="faaliyetler" class="ed">
+<div class="ed-w">
+<div class="ed-h">
+<div><p class="ed-k">Hop Atölye</p><h2>Eğitimlerimiz</h2></div>
+<p class="ed-s">Sektörün içinden isimlerle, kendi sahnemizde eğitimler.</p>
 </div>
-
 <div class="mc">
 <img class="mc-af" loading="lazy" src="img/masterclass-afis.jpg" alt="MasterClass Yönetmenler Atölyesi afişi, atölye takvimiyle">
 <div class="mc-in">
-<p class="mc-k">MasterClass · Ocak – Mart 2025</p>
+<p class="mc-k">MasterClass · Ocak – Mart 2025 <span class="mc-done">Tamamlandı</span></p>
 <h3>MasterClass Yönetmenler Atölyesi</h3>
 <p class="mc-t">Altı hafta, her cumartesi. Konuk yönetmenin seçtiği film birlikte izlenir, ardından film okuması ve yönetmenle söyleşi yapılır.</p>
 <p class="mc-m">Moderatör <b>Onur Tan</b></p>
 <ol class="mc-l"><li><img loading="lazy" src="img/mc-ezel-akay.jpg" alt="Ezel Akay"><span class="mc-d">25 Ocak</span><b>Ezel Akay</b></li><li><img loading="lazy" src="img/mc-omer-faruk-sorak.jpg" alt="Ömer Faruk Sorak"><span class="mc-d">1 Şubat</span><b>Ömer Faruk Sorak</b></li><li><img loading="lazy" src="img/mc-sinan-cetin.jpg" alt="Sinan Çetin"><span class="mc-d">8 Şubat</span><b>Sinan Çetin</b></li><li><img loading="lazy" src="img/mc-hakan-kirkavac.jpg" alt="Hakan “Ketche” Kırkavaç"><span class="mc-d">15 Şubat</span><b>Hakan “Ketche” Kırkavaç</b></li><li><img loading="lazy" src="img/mc-reis-celik.jpg" alt="Reis Çelik"><span class="mc-d">22 Şubat</span><b>Reis Çelik</b></li><li><img loading="lazy" src="img/mc-gani-mujde.jpg" alt="Gani Müjde"><span class="mc-d">1 Mart</span><b>Gani Müjde</b></li></ol>
 </div>
 </div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start; border-top: 1px solid #DCDEE1; padding-top: 56px">
-<img loading="lazy" src="img/atolye.jpg" alt="Atölye çalışmalarından kareler" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; display: block">
-<div style="display: flex; flex-direction: column; gap: 28px">
-<article style="border-top: 2px solid #FF7A1A; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Oyunculuk Eğitimi</h3>
-<p style="margin: 0; color: #6B6B6B">[PROGRAM AÇIKLAMASI]</p>
-</article>
-<article style="border-top: 2px solid #FF7A1A; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Senaristlik Eğitimi</h3>
-<p style="margin: 0; color: #6B6B6B">[PROGRAM AÇIKLAMASI]</p>
-</article>
-</div>
+<div class="ed-p">
+<div class="ed-c"><span class="ed-n">Atölye</span><b>Oyunculuk Eğitimi</b></div>
+<div class="ed-c"><span class="ed-n">Atölye</span><b>Senaristlik Eğitimi</b></div>
+<a class="ed-cta" href="#iletisim">Yeni dönemden haberdar olun <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
 </div>
 </div>
 </section>
