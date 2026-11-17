@@ -343,7 +343,6 @@ html.seen .ap-load p{display:none}
 #muzikal.scr article>div>p:nth-of-type(2){font-size:17px!important}
 #muzikal.scr ul{gap:8px!important;font-size:14px!important}
 #tiyatro.scr{border-top:0!important}
-#sinema.scr article img{aspect-ratio:2/3}
 #diziler.scr dl{grid-template-columns:repeat(3,auto)!important;justify-content:start}#diziler.scr dd{white-space:nowrap}
 #tiyatro.scr article img{width:auto!important;height:calc(100vh - 330px)!important;max-height:520px}
 #tiyatro.scr article{flex-wrap:nowrap!important}
@@ -517,6 +516,8 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 /*frame*/
 #sinema article img,#muzikal article img,#tiyatro article img{box-sizing:border-box!important;padding:10px!important;background:#fff!important;border:1px solid #DCDEE1!important;border-radius:6px!important;outline:1px solid rgba(20,20,20,.06);outline-offset:-11px;box-shadow:0 2px 0 rgba(20,20,20,.03),0 28px 44px -26px rgba(20,20,20,.55)!important;transition:transform .35s,box-shadow .35s}
 #sinema article:hover img,#muzikal article:hover img,#tiyatro article:hover img{transform:translateY(-4px);box-shadow:0 2px 0 rgba(20,20,20,.03),0 36px 54px -26px rgba(20,20,20,.6)!important}
+#sinema article img,#muzikal article img,#tiyatro article img{aspect-ratio:auto!important;object-fit:contain!important}
+@media (min-width:1000px){#sinema.scr article img{height:auto!important;max-height:none!important;width:min(100%,calc((100vh - 380px) * var(--r,.667)))!important}#sinema.scr>div:last-child{align-items:start}}
 /*endframe*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
@@ -565,28 +566,28 @@ requestAnimationFrame(tick);
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/kendinden-kacak-afis.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; background: #FFFFFF; border-radius: 6px; display: block">
+<img loading="lazy" src="img/kendinden-kacak-afis.jpg" alt="Kendinden Kaçak film afişi" style="--r:0.667;width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kendinden Kaçak</h3>
 <p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2022 · 1 sa 28 dk</p>
 </div>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/akif.jpg" alt="AKİF film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/akif.jpg" alt="AKİF film afişi" style="--r:0.699;width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">AKİF</h3>
 <p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2020 · 1 sa 51 dk<br>İstiklal Marşı'nın 100. yılı, T.C. Cumhurbaşkanlığı himayesinde</p>
 </div>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" style="--r:0.718;width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Bircanlar Lokantası</h3>
 <p style="margin: 0; font-size: 15px; color: #6B6B6B">TV filmi · 2019 · 1 sa 29 dk</p>
 </div>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/kafalar-karisik.jpg" alt="Kafalar Karışık film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/kafalar-karisik.jpg" alt="Kafalar Karışık film afişi" style="--r:0.75;width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kafalar Karışık</h3>
 <p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2018 · 1 sa 35 dk</p>
@@ -663,7 +664,7 @@ requestAnimationFrame(tick);
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Müzikal</h2>
 </div>
 <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center">
-<img loading="lazy" src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" style="width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Müzikal · 2025</p>
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.03em">İstanbul Efendisi Müzikali</h3>
@@ -701,7 +702,7 @@ requestAnimationFrame(tick);
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
 <article style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
-<img loading="lazy" src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" style="width: 220px; max-width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" style="width: 220px; max-width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Oyun · 2023</p>
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em">Dostlarla Akşam Yemeği</h3>
@@ -710,7 +711,7 @@ requestAnimationFrame(tick);
 </div>
 </article>
 <article style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
-<img loading="lazy" src="img/inadina.jpg" alt="İnadına Yaşamak afişi" style="width: 220px; max-width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="img/inadina.jpg" alt="İnadına Yaşamak afişi" style="width: 220px; max-width: 100%; height: auto; border-radius: 6px; display: block">
 <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Tek kişilik oyun · Prömiyer 24 Ekim 2024</p>
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em">İnadına Yaşamak</h3>
