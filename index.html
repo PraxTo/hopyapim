@@ -566,9 +566,10 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 .ed-s{margin:0;max-width:380px;color:#6B6B6B}
 .mc-done{display:inline-block;margin-left:2px;padding:2px 8px;border-radius:999px;background:#141414;color:#fff;font-size:11px;letter-spacing:.1em}
 .ed-p{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;border-top:1px solid #DCDEE1;padding-top:22px}
-.ed-c{display:flex;align-items:baseline;gap:10px;padding:12px 18px;border:1px solid #DCDEE1;border-radius:12px;background:#F7F8F9}
+.ed-c{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:12px;background:#141414;color:#fff}
+.ed-c .mc-done{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
 .ed-n{font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#FF7A1A}
-.ed-c b{font:800 18px Archivo,sans-serif;letter-spacing:-.01em}
+.ed-c b{font:800 18px Archivo,sans-serif;letter-spacing:-.01em;color:#fff}
 .ed-cta{margin-left:auto;display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#141414;font-weight:700;padding:12px 20px;border-radius:999px;border:1.5px solid #141414}
 .ed-cta:hover{background:#141414;color:#fff}
 @media (min-width:1000px){
@@ -790,8 +791,9 @@ requestAnimationFrame(tick);
 </div>
 </div>
 <div class="ed-p">
-<div class="ed-c"><span class="ed-n">Atölye</span><b>Oyunculuk Eğitimi</b></div>
-<div class="ed-c"><span class="ed-n">Atölye</span><b>Senaristlik Eğitimi</b></div>
+<div class="ed-c"><b>Oyunculuk Eğitimi</b><span class="mc-done">Tamamlandı</span></div>
+<div class="ed-c"><b>Senaristlik Eğitimi</b><span class="mc-done">Tamamlandı</span></div>
+<div class="ed-c"><b>Oyun Çıkarma Atölyesi</b><span class="mc-done">Tamamlandı</span></div>
 <a class="ed-cta" href="#iletisim">Yeni dönemden haberdar olun <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
 </div>
 </div>
