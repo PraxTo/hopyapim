@@ -1044,7 +1044,10 @@ f.addEventListener('submit',function(e){e.preventDefault();var msg='';
  var v=function(n){var x=f.querySelector('[name="'+n+'"]:checked')||f.querySelector('[name="'+n+'"]');return x&&x.value.trim()?x.value.trim():null};
  fetch('https://uotynojgbnalejgffzlp.supabase.co/rest/v1/hopyapim_mesajlar',{method:'POST',headers:{'apikey':'sb_publishable_qdGqRcSXCNijmRllk5FbPQ_UmYiIvo0','Content-Type':'application/json','Prefer':'return=minimal'},
   body:JSON.stringify({ad_soyad:v('Ad Soyad'),kurum:v('Kurum'),email:v('email'),telefon:v('Telefon'),konu:v('Konu'),mesaj:(v('LMF')?'[LMF] '+v('LMF')+'\n\n':'')+(v('Mesaj')||'')})})
- .then(function(r){if(!r.ok)throw 0;f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'})
+ .then(function(r){if(!r.ok)throw 0;
+  try{var m=new FormData();m.append('_subject','hopyapim.com · '+(v('Konu')||'Yeni mesaj')+' · '+(v('Ad Soyad')||''));m.append('_template','table');m.append('_captcha','false');m.append('Ad Soyad',v('Ad Soyad')||'');m.append('Kurum',v('Kurum')||'');m.append('email',v('email')||'');m.append('Telefon',v('Telefon')||'');m.append('Konu',v('Konu')||'');if(v('LMF'))m.append('LMF',v('LMF'));m.append('Mesaj',v('Mesaj')||'');
+  fetch('https://formsubmit.co/ajax/marc@zavie.app',{method:'POST',headers:{'Accept':'application/json'},body:m,keepalive:true}).catch(function(){})}catch(e){}
+  f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'})
  .catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){bt.disabled=false})});})();
 </script>
 <script>
