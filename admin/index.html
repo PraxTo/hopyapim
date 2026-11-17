@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hop Yapım · Yönetim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#F2F3F5;color:#141414;font:15px/1.5 Inter,system-ui,sans-serif}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.hide{display:none!important}
+/* giriş */
+.login{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:100%;max-width:380px;background:#fff;border:1px solid #E2E4E7;border-radius:16px;padding:32px 28px;box-shadow:0 30px 60px -30px rgba(20,24,32,.3)}
+.brand{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.brand b{font:900 22px Archivo,sans-serif;letter-spacing:-.02em}.brand i{width:12px;height:12px;border-radius:50%;background:#FF7A1A;display:inline-block}
+.brand span{font-size:13px;color:#6B6B6B;margin-left:auto}
+label{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;font-size:13px;font-weight:600}
+input,select{font:500 15px Inter,sans-serif;padding:12px 13px;border:1.5px solid #DCDEE1;border-radius:10px;outline:none;width:100%;background:#fff}
+input:focus,select:focus{border-color:#FF7A1A}
+.btn{border:0;border-radius:999px;padding:13px 22px;font-weight:700;background:#141414;color:#fff}
+.btn.full{width:100%}
+.btn:disabled{opacity:.5;cursor:wait}
+.err{color:#B3122B;font-size:13px;min-height:20px;margin:10px 0 0}
+/* panel */
+header{position:sticky;top:0;z-index:5;background:rgba(242,243,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E2E4E7}
+.bar{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar .brand{margin:0}
+.tabs{display:flex;gap:6px}
+.tab{border:1px solid #DCDEE1;background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:14px}
+.tab.on{background:#141414;color:#fff;border-color:#141414}
+.tab em{font-style:normal;background:#FF7A1A;color:#fff;border-radius:999px;padding:0 7px;margin-left:6px;font-size:12px}
+.sp{flex:1}
+.search{max-width:240px;padding:9px 12px}
+.out{background:none;border:0;color:#6B6B6B;font-weight:600;font-size:14px}
+main{max-width:1100px;margin:0 auto;padding:20px}
+.empty{text-align:center;color:#6B6B6B;padding:80px 20px}
+.msg{background:#fff;border:1px solid #E2E4E7;border-radius:14px;margin-bottom:12px;overflow:hidden}
+.msg.new{border-left:4px solid #FF7A1A}
+.mh{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 18px;cursor:pointer}
+.mh h3{margin:0;font:800 17px Archivo,sans-serif;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pill{font:700 11px Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:999px;background:#FFF1E6;color:#C2410C;border:1px solid #FFD2B0}
+.mh time{font-size:13px;color:#6B6B6B;white-space:nowrap}
+.mh p{margin:0;color:#4A4A4A;grid-column:1/-1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mb{padding:0 18px 18px;border-top:1px solid #EDEEF0}
+.meta{display:flex;flex-wrap:wrap;gap:6px 22px;padding:14px 0;font-size:14px}
+.meta span{color:#6B6B6B}.meta b{font-weight:600;color:#141414}
+.body{white-space:pre-wrap;background:#F7F8F9;border-radius:10px;padding:14px;margin:0 0 14px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.a{border:1px solid #DCDEE1;background:#fff;border-radius:999px;padding:8px 14px;font-weight:600;font-size:14px;text-decoration:none}
+.a.pri{background:#FF7A1A;border-color:#FF7A1A;color:#fff}
+.a.del{color:#B3122B}
+.a.del.sure{background:#B3122B;color:#fff;border-color:#B3122B}
+@media (max-width:640px){.search{max-width:none;flex-basis:100%;order:9}.mh{grid-template-columns:1fr}.mh time{order:-1}}
+</style>
+</head>
+<body>
+
+<section class="login" id="vLogin">
+<form class="card" id="fLogin">
+<div class="brand"><b>hop</b><i></i><span>Yönetim girişi</span></div>
+<label>E-posta<input type="email" id="lEmail" autocomplete="username" required></label>
+<label>Şifre<input type="password" id="lPass" autocomplete="current-password" required></label>
+<button class="btn full" id="lBtn">Giriş yap</button>
+<p class="err" id="lErr" role="alert"></p>
+</form>
+</section>
+
+<div id="vPanel" class="hide">
+<header><div class="bar">
+<div class="brand"><b>hop</b><i></i></div>
+<div class="tabs"><button class="tab on" data-t="gelen">Gelen<em id="cNew" class="hide"></em></button><button class="tab" data-t="arsiv">Arşiv</button></div>
+<div class="sp"></div>
+<input class="search" id="q" placeholder="Ara: isim, kurum, mesaj…">
+<button class="out" id="bOut">Çıkış</button>
+</div></header>
+<main id="list"><p class="empty">Yükleniyor…</p></main>
+</div>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+const sb = createClient('https://uotynojgbnalejgffzlp.supabase.co','sb_publishable_qdGqRcSXCNijmRllk5FbPQ_UmYiIvo0');
+const $ = id => document.getElementById(id);
+let rows = [], tab = 'gelen', open = new Set();
+
+const esc = s => (s ?? '').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = d => new Date(d).toLocaleString('tr-TR',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+
+async function show(){
+  const { data:{ session } } = await sb.auth.getSession();
+  $('vLogin').classList.toggle('hide', !!session);
+  $('vPanel').classList.toggle('hide', !session);
+  if (session) load();
+}
+
+$('fLogin').addEventListener('submit', async e => {
+  e.preventDefault(); $('lErr').textContent=''; $('lBtn').disabled=true;
+  const { error } = await sb.auth.signInWithPassword({ email:$('lEmail').value.trim(), password:$('lPass').value });
+  $('lBtn').disabled=false;
+  if (error) { $('lErr').textContent = 'E-posta ya da şifre hatalı.'; return; }
+  $('lPass').value=''; show();
+});
+$('bOut').onclick = async () => { await sb.auth.signOut(); rows=[]; show(); };
+
+async function load(){
+  const { data, error } = await sb.from('hopyapim_mesajlar').select('*').order('created_at',{ascending:false});
+  if (error) { $('list').innerHTML = '<p class="empty">Mesajlar okunamadı. Bu hesabın yetkisi olmayabilir.</p>'; return; }
+  rows = data || []; render();
+}
+
+function render(){
+  const q = $('q').value.trim().toLocaleLowerCase('tr');
+  const n = rows.filter(r => !r.arsiv && !r.okundu).length;
+  $('cNew').textContent = n; $('cNew').classList.toggle('hide', !n);
+  const list = rows.filter(r => (tab==='arsiv') === r.arsiv)
+    .filter(r => !q || [r.ad_soyad,r.kurum,r.email,r.telefon,r.konu,r.mesaj].join(' ').toLocaleLowerCase('tr').includes(q));
+  if (!list.length) { $('list').innerHTML = `<p class="empty">${tab==='arsiv'?'Arşiv boş.':'Henüz mesaj yok.'}</p>`; return; }
+  $('list').innerHTML = list.map(r => {
+    const o = open.has(r.id);
+    const tel = r.telefon ? `<span>Telefon <b><a href="tel:${esc(r.telefon.replace(/\s/g,''))}">${esc(r.telefon)}</a></b></span>` : '';
+    const reply = `mailto:${esc(r.email)}?subject=${encodeURIComponent('Hop Yapım · '+(r.konu||'Mesajınız'))}`;
+    return `<article class="msg ${!r.okundu&&!r.arsiv?'new':''}" data-id="${r.id}">
+      <div class="mh" data-act="toggle"><h3>${esc(r.ad_soyad)}${r.konu?`<span class="pill">${esc(r.konu)}</span>`:''}</h3><time>${fmt(r.created_at)}</time>
+      ${o?'':`<p>${r.kurum?esc(r.kurum)+' · ':''}${esc(r.mesaj)}</p>`}</div>
+      ${o?`<div class="mb"><div class="meta"><span>Kurum <b>${esc(r.kurum||'—')}</b></span><span>E-posta <b><a href="mailto:${esc(r.email)}">${esc(r.email)}</a></b></span>${tel}</div>
+      <p class="body">${esc(r.mesaj)}</p>
+      <div class="acts"><a class="a pri" href="${reply}">Yanıtla</a>
+      <button class="a" data-act="read">${r.okundu?'Okunmadı yap':'Okundu yap'}</button>
+      <button class="a" data-act="arch">${r.arsiv?'Gelen kutusuna al':'Arşivle'}</button>
+      <button class="a del" data-act="del">Sil</button></div></div>`:''}
+    </article>`;}).join('');
+}
+
+$('list').addEventListener('click', async e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const id = +b.closest('.msg').dataset.id, r = rows.find(x => x.id===id), act = b.dataset.act;
+  if (act==='toggle') {
+    if (open.has(id)) open.delete(id); else { open.add(id); if (!r.okundu) { r.okundu=true; sb.from('hopyapim_mesajlar').update({okundu:true}).eq('id',id).then(()=>{}); } }
+    render(); return;
+  }
+  if (act==='read') { r.okundu=!r.okundu; await sb.from('hopyapim_mesajlar').update({okundu:r.okundu}).eq('id',id); }
+  if (act==='arch') { r.arsiv=!r.arsiv; open.delete(id); await sb.from('hopyapim_mesajlar').update({arsiv:r.arsiv}).eq('id',id); }
+  if (act==='del') {
+    if (!b.classList.contains('sure')) { b.classList.add('sure'); b.textContent='Kalıcı sil? Tekrar bas'; setTimeout(()=>{ if(b.isConnected){b.classList.remove('sure'); b.textContent='Sil';} },4000); return; }
+    const { error } = await sb.from('hopyapim_mesajlar').delete().eq('id',id);
+    if (!error) rows = rows.filter(x => x.id!==id);
+  }
+  render();
+});
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => { document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t)); tab=t.dataset.t; render(); });
+$('q').addEventListener('input', render);
+sb.auth.onAuthStateChange((ev) => { if (ev==='SIGNED_OUT') show(); });
+show();
+</script>
+</body>
+</html>

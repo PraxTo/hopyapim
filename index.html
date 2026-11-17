@@ -738,9 +738,7 @@ requestAnimationFrame(tick);
 <div style="max-width: 1240px; margin: 0 auto; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 48px">
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(44px, 8vw, 112px); line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase">Birlikte<br>üretelim.</h2>
 <p style="margin: 0; max-width: 620px; font-size: 20px; font-weight: 500">Kanallar ve platformlar için yeni dizi, film ve microdrama projelerini konuşmaya hazırız.</p>
-<form class="cf" id="cf" action="https://formsubmit.co/mail@harunturk.com" method="POST" novalidate>
-<input type="hidden" name="_subject" value="hopyapim.com · Yeni iletişim mesajı">
-<input type="hidden" name="_template" value="table">
+<form class="cf" id="cf" novalidate>
 <input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label><span>Ad Soyad</span><input name="Ad Soyad" required autocomplete="name"></label>
 <label><span>Kurum / Kanal</span><input name="Kurum" autocomplete="organization"></label>
@@ -776,11 +774,13 @@ f.addEventListener('submit',function(e){e.preventDefault();var msg='';
  if(!msg&&!reE.test(em.value)){em.classList.add('bad');msg='E-posta adresi geçerli değil (ornek@sirket.com).'}
  if(!msg&&!telOk(ph.value)){ph.classList.add('bad');msg='Telefon numarası geçerli değil (0 5XX XXX XX XX).'}
  if(msg){st.textContent=msg;return}
+ if(f.querySelector('[name=_honey]').value){st.textContent='Teşekkürler, mesajınız bize ulaştı.';return}
  bt.disabled=true;st.textContent='Gönderiliyor…';
- fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){
-  if(String(d.success)==='true'){f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'}
-  else if(/activat/i.test(d.message||'')){st.textContent='Form henüz etkinleştirilmedi. Etkinleştirme e-postası gönderildi.'}
-  else throw 0}).catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){bt.disabled=false})});})();
+ var v=function(n){var x=f.querySelector('[name="'+n+'"]');return x&&x.value.trim()?x.value.trim():null};
+ fetch('https://uotynojgbnalejgffzlp.supabase.co/rest/v1/hopyapim_mesajlar',{method:'POST',headers:{'apikey':'sb_publishable_qdGqRcSXCNijmRllk5FbPQ_UmYiIvo0','Content-Type':'application/json','Prefer':'return=minimal'},
+  body:JSON.stringify({ad_soyad:v('Ad Soyad'),kurum:v('Kurum'),email:v('email'),telefon:v('Telefon'),konu:v('Konu'),mesaj:v('Mesaj')})})
+ .then(function(r){if(!r.ok)throw 0;f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'})
+ .catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){bt.disabled=false})});})();
 </script>
 </body>
 </html>
