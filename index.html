@@ -291,6 +291,70 @@ html.seen .ap-load p{display:none}
 @media (max-width:999px){.lens{display:none}.pile{animation-delay:calc(.2s + var(--k,0) * .1s)}}
 @media (prefers-reduced-motion:reduce){.orbit .lens,.ap-load{display:none}.orbit .pile,.orbit .pile-art{animation:none!important}.orbit .core .brand{animation:none;opacity:1;filter:none}}
 /*endap*/
+/*km*/
+.km{max-width:1440px;margin:0 auto;padding:40px 32px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box}
+.km-fig{position:relative;margin:0;border-radius:10px;overflow:hidden;background:#141414;height:300px}
+.km-fig img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
+.km-fig:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.72) 100%)}
+.km-head{position:absolute;left:32px;bottom:26px;z-index:2;color:#fff}
+.km-kick{margin:0 0 6px;font:600 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#FFB27A}
+.km-head h2{margin:0;font:900 clamp(40px,5.4vw,84px)/.95 Archivo,sans-serif;letter-spacing:-.03em;text-transform:uppercase}
+.km-sum{margin:10px 0 0;font:500 18px Inter,sans-serif;color:#E9E9E9}.km-sum b{color:#fff}
+.km-tag{position:absolute;right:20px;top:18px;z-index:2;font:600 12px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(20,20,20,.55);padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.km-halls{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.km-hall{background:#fff;border:1px solid #DCDEE1;border-radius:10px;padding:22px 24px;display:flex;flex-direction:column;gap:6px}
+.km-no{font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6B6B6B}
+.km-hall h3{margin:0;font:800 26px Archivo,sans-serif;letter-spacing:-.02em}
+.km-cap{margin:4px 0 0;display:flex;align-items:baseline;gap:8px}
+.km-cap b{font:900 clamp(48px,4.6vw,72px)/1 Archivo,sans-serif;color:#FF7A1A;letter-spacing:-.02em}
+.km-cap span{font-size:16px;color:#4A4A4A}
+.km-bar{display:block;height:6px;border-radius:6px;background:#EEF0F2;position:relative;overflow:hidden;margin-top:6px}
+.km-bar:after{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:#FF7A1A;border-radius:6px}
+.km-use{margin:4px 0 0;font-size:14px;color:#6B6B6B}
+.km-aud{background:#141414;border-color:#141414;justify-content:center}
+.km-aud .km-no{color:#FFB27A}.km-aud .km-cap b{color:#fff}.km-aud .km-use{color:#CFCFCF;font-size:16px}
+.km-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.km-foot p{margin:0;color:#4A4A4A}
+.km-foot a{border:1px solid #BFC1C5;font-weight:600;padding:12px 22px;border-radius:999px}
+.km-foot a:hover{border-color:#FF7A1A}
+@media (min-width:1000px){.km{height:100vh;min-height:640px;padding:80px 32px 24px}.km-fig{flex:1;height:auto;min-height:240px}.km-halls{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:1000px) and (max-height:760px){.km{padding-top:72px;gap:14px}.km-hall{padding:16px 20px}.km-cap b{font-size:48px}.km-use{display:none}.km-aud .km-use{display:block}}
+/*endkm*/
+/*scr*/
+@media (min-width:1000px){
+.sy-wrap{padding:0 32px!important;gap:0!important}
+.scr{height:100vh;min-height:620px;box-sizing:border-box;padding:84px 32px 36px!important;gap:28px!important;display:flex!important;flex-direction:column!important;justify-content:center;overflow:hidden;border-top:0!important;scroll-margin-top:0}
+#muzikal.scr,#tiyatro.scr{padding:84px 0 36px!important}
+.scr h2{font-size:clamp(40px,4.6vw,68px)!important}
+#sinema.scr>div:last-child{grid-template-columns:repeat(4,1fr)!important;gap:24px!important}
+#sinema.scr article{gap:10px!important}
+#sinema.scr article img{height:calc(100vh - 360px)!important;max-height:560px;width:auto!important;max-width:100%}
+#sinema.scr article h3{font-size:22px!important}
+#diziler.scr article{grid-template-columns:1.3fr 1fr!important}
+#diziler.scr article img{height:calc(100vh - 300px)!important;max-height:600px;width:100%!important;aspect-ratio:auto!important}
+#microdrama.scr>div:last-child{grid-template-columns:repeat(3,1fr)!important;gap:24px!important}
+#microdrama.scr article{padding:20px!important;gap:14px!important}
+#microdrama.scr article>div:first-child{max-width:none!important;width:auto!important;height:calc(100vh - 400px);aspect-ratio:9/16.9}
+#microdrama.scr article>div:first-child>*{height:100%;width:100%!important;aspect-ratio:auto!important}
+#microdrama.scr article h3{font-size:22px!important}
+#muzikal.scr article{grid-template-columns:auto 1fr!important;gap:44px!important}
+#muzikal.scr article img{height:calc(100vh - 290px)!important;max-height:640px;width:auto!important}
+#muzikal.scr article>div{gap:14px!important}
+#muzikal.scr article>div>p:nth-of-type(2){font-size:17px!important}
+#muzikal.scr ul{gap:8px!important;font-size:14px!important}
+#tiyatro.scr{border-top:0!important}
+#sinema.scr article img{aspect-ratio:2/3}
+#diziler.scr dl{grid-template-columns:repeat(3,auto)!important;justify-content:start}#diziler.scr dd{white-space:nowrap}
+#tiyatro.scr article img{width:auto!important;height:calc(100vh - 330px)!important;max-height:520px}
+#tiyatro.scr article{flex-wrap:nowrap!important}
+}
+@media (min-width:1000px) and (max-height:800px){
+.scr{padding-top:76px!important;gap:18px!important}#muzikal.scr,#tiyatro.scr{padding-top:76px!important}
+#sinema.scr>div:first-child p:last-child,#microdrama.scr>div:first-child>p{display:none}
+#muzikal.scr dl{display:none!important}
+#microdrama.scr article p{display:none}
+}
+/*endscr*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -316,7 +380,7 @@ requestAnimationFrame(tick);
 <section id="ust" class="hub" aria-label="Hop Yapım">
 <nav class="corner" aria-label="Kısa yollar"><a class="c-left" href="#sahne">Kültür Merkezimiz</a><a class="c-right" href="#iletisim">İletişim</a></nav>
 <div class="board orbit">
-<div class="ring" aria-hidden="true"></div><div class="lens" aria-hidden="true"></div><div class="core"><div class="brand"><h1 class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" role="img" aria-label="hop yapım"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></h1><div class="load" role="progressbar" aria-label="Yükleniyor"><span></span></div><p class="sub">Sinema · Dizi Film · Sahne Sanatları</p></div></div><div class="pile" style="--px:50.00%;--py:12.90%;--c:0.000;--s:-1.000;--k:0;--pr:-3deg;--cc:0.000;--cs:-1.000;--rc:18deg"><div class="pile-art"><a class="it kk" href="#sinema" style="--x:21%;--y:51%;--w:32%;--r:-6deg;--d:.05"><img src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak afişi"></a><a class="it" href="#sinema" style="--x:40%;--y:49%;--w:32%;--r:-2deg;--d:0.12"><img src="img/akif.jpg" alt="AKİF afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:60%;--y:49%;--w:32%;--r:2deg;--d:0.19"><img src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:79%;--y:51%;--w:32%;--r:6deg;--d:0.26"><img src="img/kafalar-karisik.jpg" alt="Kafalar Karışık afişi" loading="eager"></a></div><p class="lbl"><a href="#sinema">Sinema</a><span class="s">4 sinema ve TV filmi</span></p></div><div class="pile" style="--px:85.66%;--py:38.54%;--c:0.951;--s:-0.309;--k:1;--pr:2.5deg;--cc:0.866;--cs:-0.500;--rc:78deg"><div class="pile-art"><a class="it" href="#diziler" style="--x:50%;--y:50%;--w:90%;--r:0deg;--d:0.33"><img src="img/alman-kuzusu.jpg" alt="Alman Kuzusu afişi" loading="eager"></a></div><p class="lbl"><a href="#diziler">TV Dizisi</a><span class="s">Alman Kuzusu · TRT Türk</span></p></div><div class="pile" style="--px:72.04%;--py:80.01%;--c:0.588;--s:0.809;--k:2;--pr:-2deg;--cc:0.866;--cs:0.500;--rc:138deg"><div class="pile-art"><a class="it frame" href="#microdrama" style="--x:21%;--y:50%;--w:27%;--r:-6deg;--d:0.4"><b>Derinlerdeki<br>Tehlike</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:50%;--y:49%;--w:27%;--r:0deg;--d:0.47"><b>Perdenin<br>Arkasında</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:79%;--y:50%;--w:27%;--r:6deg;--d:0.54"><b>Gizli<br>Tehlike</b><span>Yakında</span></a></div><p class="lbl"><a href="#microdrama">Microdrama</a><span class="s">3 dikey dizi · DramaPops</span></p></div><div class="pile" style="--px:27.96%;--py:80.01%;--c:-0.588;--s:0.809;--k:3;--pr:2.5deg;--cc:0.000;--cs:1.000;--rc:198deg"><div class="pile-art"><a class="it" href="#sahne-yapimlari" style="--x:50%;--y:50%;--w:52%;--r:0deg;--d:0.61"><img src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" loading="eager"></a></div><p class="lbl"><a href="#sahne-yapimlari">Müzikal</a><span class="s">İstanbul Efendisi Müzikali · <svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</span></p></div><div class="pile" style="--px:14.34%;--py:38.54%;--c:-0.951;--s:-0.309;--k:4;--pr:-2.5deg;--cc:-0.866;--cs:0.500;--rc:258deg"><div class="pile-art"><a class="it" href="#tiyatro" style="--x:34%;--y:50%;--w:38%;--r:-4deg;--d:0.68"><img src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" loading="eager"></a><a class="it" href="#tiyatro" style="--x:66%;--y:50%;--w:38%;--r:4deg;--d:0.75"><img src="img/inadina.jpg" alt="İnadına Yaşamak afişi" loading="eager"></a></div><p class="lbl"><a href="#tiyatro">Tiyatro Oyunları</a><span class="s">2 oyun · Hop Sahne</span></p></div>
+<div class="ring" aria-hidden="true"></div><div class="lens" aria-hidden="true"></div><div class="core"><div class="brand"><h1 class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" role="img" aria-label="hop yapım"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></h1><div class="load" role="progressbar" aria-label="Yükleniyor"><span></span></div><p class="sub">Sinema · Dizi Film · Sahne Sanatları</p></div></div><div class="pile" style="--px:50.00%;--py:12.90%;--c:0.000;--s:-1.000;--k:0;--pr:-3deg;--cc:0.000;--cs:-1.000;--rc:18deg"><div class="pile-art"><a class="it kk" href="#sinema" style="--x:21%;--y:51%;--w:32%;--r:-6deg;--d:.05"><img src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak afişi"></a><a class="it" href="#sinema" style="--x:40%;--y:49%;--w:32%;--r:-2deg;--d:0.12"><img src="img/akif.jpg" alt="AKİF afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:60%;--y:49%;--w:32%;--r:2deg;--d:0.19"><img src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:79%;--y:51%;--w:32%;--r:6deg;--d:0.26"><img src="img/kafalar-karisik.jpg" alt="Kafalar Karışık afişi" loading="eager"></a></div><p class="lbl"><a href="#sinema">Sinema</a><span class="s">4 sinema ve TV filmi</span></p></div><div class="pile" style="--px:85.66%;--py:38.54%;--c:0.951;--s:-0.309;--k:1;--pr:2.5deg;--cc:0.866;--cs:-0.500;--rc:78deg"><div class="pile-art"><a class="it" href="#diziler" style="--x:50%;--y:50%;--w:90%;--r:0deg;--d:0.33"><img src="img/alman-kuzusu.jpg" alt="Alman Kuzusu afişi" loading="eager"></a></div><p class="lbl"><a href="#diziler">TV Dizisi</a><span class="s">Alman Kuzusu · TRT Türk</span></p></div><div class="pile" style="--px:72.04%;--py:80.01%;--c:0.588;--s:0.809;--k:2;--pr:-2deg;--cc:0.866;--cs:0.500;--rc:138deg"><div class="pile-art"><a class="it frame" href="#microdrama" style="--x:21%;--y:50%;--w:27%;--r:-6deg;--d:0.4"><b>Derinlerdeki<br>Tehlike</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:50%;--y:49%;--w:27%;--r:0deg;--d:0.47"><b>Perdenin<br>Arkasında</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:79%;--y:50%;--w:27%;--r:6deg;--d:0.54"><b>Gizli<br>Tehlike</b><span>Yakında</span></a></div><p class="lbl"><a href="#microdrama">Microdrama</a><span class="s">3 dikey dizi · DramaPops</span></p></div><div class="pile" style="--px:27.96%;--py:80.01%;--c:-0.588;--s:0.809;--k:3;--pr:2.5deg;--cc:0.000;--cs:1.000;--rc:198deg"><div class="pile-art"><a class="it" href="#sahne-yapimlari" style="--x:50%;--y:50%;--w:52%;--r:0deg;--d:0.61"><img src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" loading="eager"></a></div><p class="lbl"><a href="#muzikal">Müzikal</a><span class="s">İstanbul Efendisi Müzikali · <svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</span></p></div><div class="pile" style="--px:14.34%;--py:38.54%;--c:-0.951;--s:-0.309;--k:4;--pr:-2.5deg;--cc:-0.866;--cs:0.500;--rc:258deg"><div class="pile-art"><a class="it" href="#tiyatro" style="--x:34%;--y:50%;--w:38%;--r:-4deg;--d:0.68"><img src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" loading="eager"></a><a class="it" href="#tiyatro" style="--x:66%;--y:50%;--w:38%;--r:4deg;--d:0.75"><img src="img/inadina.jpg" alt="İnadına Yaşamak afişi" loading="eager"></a></div><p class="lbl"><a href="#tiyatro">Tiyatro Oyunları</a><span class="s">2 oyun · Hop Sahne</span></p></div>
 </div>
 <dl class="stats band" aria-label="Rakamlarla Hop Yapım"><div style="--j:0"><dt class="tag">TV Dizisi</dt><dd class="num">4 sezon · 52 bölüm</dd><dd class="det">TRT Türk</dd></div><div style="--j:1"><dt class="tag">Microdrama</dt><dd class="num">180 bölüm</dd><dd class="det">DramaPops · 3 dikey dizi</dd></div><div style="--j:2"><dt class="tag">Sinema</dt><dd class="num">4 film</dd><dd class="det">3 sinema · 1 TV filmi</dd></div><div style="--j:3"><dt class="tag">Sahne</dt><dd class="num">3 yapım</dd><dd class="det">1 müzikal · 2 oyun</dd></div><div style="--j:4"><dt class="tag">Ödül</dt><dd class="num"><svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</dd><dd class="det">İstanbul Efendisi Müzikali</dd></div><div style="--j:5"><dt class="tag">Seyirci</dt><dd class="num">+100.000</dd><dd class="det">tiyatro izleyicisi, her sezon</dd></div></dl>
 </section>
@@ -346,7 +410,7 @@ requestAnimationFrame(tick);
 </div>
 </section>
 
-<section id="sinema" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; gap: 48px">
+<section id="sinema" class="scr" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 01</p>
@@ -356,7 +420,7 @@ requestAnimationFrame(tick);
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: contain; background: #FFFFFF; border-radius: 6px; display: block">
+<img loading="lazy" src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 18% 50%; background: #FFFFFF; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kendinden Kaçak</h3>
 <p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2021 · 1 sa 35 dk</p>
@@ -386,7 +450,7 @@ requestAnimationFrame(tick);
 </div>
 </section>
 
-<section id="diziler" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
+<section id="diziler" class="scr" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 02</p>
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Diziler</h2>
@@ -406,7 +470,7 @@ requestAnimationFrame(tick);
 </article>
 </section>
 
-<section id="microdrama" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
+<section id="microdrama" class="scr" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 03</p>
@@ -446,9 +510,9 @@ requestAnimationFrame(tick);
 </section>
 
 <section id="sahne-yapimlari" style="background: #FFFFFF; color: #0C0C0C">
-<div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 72px">
+<div class="sy-wrap" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 72px">
 
-<div style="display: flex; flex-direction: column; gap: 40px">
+<div id="muzikal" class="scr" style="display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Yapımlar · 04</p>
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Müzikal</h2>
@@ -485,7 +549,7 @@ requestAnimationFrame(tick);
 </article>
 </div>
 
-<div id="tiyatro" style="display: flex; flex-direction: column; gap: 40px; border-top: 2px solid #0C0C0C; padding-top: 56px">
+<div id="tiyatro" class="scr" style="display: flex; flex-direction: column; gap: 40px; border-top: 2px solid #0C0C0C; padding-top: 56px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Yapımlar · 05</p>
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Tiyatro Oyunlarımız</h2>
@@ -572,43 +636,12 @@ requestAnimationFrame(tick);
 </div>
 </section>
 
-<section id="sahne" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Kültür Merkezimiz</h2>
-<p style="margin: 0; max-width: 420px; color: #6B6B6B">Hop Sahne · House of Performance. Bakırköy'ün merkezinde üç salonlu sahne sanatları merkezi: tiyatro, konser, atölye ve gösterim.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 20px">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">3 ayrı salon</p>
-<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
-<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 13px; color: #6B6B6B">Salon 1</span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Ana Salon</h3>
-</div>
-<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">460</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
-</li>
-<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 13px; color: #6B6B6B">Salon 2</span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Alt Sahne</h3>
-</div>
-<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">120</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
-</li>
-<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 13px; color: #6B6B6B">Salon 3</span>
-<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Blackbox</h3>
-</div>
-<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">110</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
-</li>
-</ul>
-<p style="margin: 0; border-top: 1px solid #DCDEE1; border-bottom: 1px solid #DCDEE1; padding: 28px 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(48px, 7vw, 88px); line-height: 1">+100.000</span><span style="font-size: 20px; color: #4A4A4A">tiyatro izleyicisi, her sezon</span></p>
-</div>
-<img loading="lazy" src="img/salon-2.jpg" alt="Hop Sahne salonu ve fuayesi" style="width: 100%; height: clamp(240px, 36vw, 500px); object-fit: cover; border-radius: 6px; display: block">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
-<p style="margin: 0; color: #4A4A4A">Zeytinlik, Türkçü Sk. No:6, Bakırköy / İstanbul</p>
-<a href="https://www.hopsahne.com" style="border: 1px solid #BFC1C5; font-weight: 600; padding: 15px 26px; border-radius: 999px">Program ve bilet: hopsahne.com</a>
-</div>
+<section id="sahne" class="km">
+<figure class="km-fig"><img loading="lazy" src="img/ana-salon.jpg" alt="Hop Sahne Ana Salon, sahneden salona bakış">
+<figcaption class="km-head"><p class="km-kick">Hop Sahne · Bakırköy / İstanbul</p><h2>Kültür Merkezimiz</h2><p class="km-sum"><b>3 salon</b> · <b>690 koltuk</b></p></figcaption>
+<span class="km-tag">Ana Salon · sahneden görünüm</span></figure>
+<ul class="km-halls"><li class="km-hall"><span class="km-no">Salon 1</span><h3>Ana Salon</h3><p class="km-cap"><b>460</b><span>koltuk</span></p><i class="km-bar" style="--p:100.0%"></i><p class="km-use">Büyük prodüksiyon, müzikal, konser</p></li><li class="km-hall"><span class="km-no">Salon 2</span><h3>Alt Sahne</h3><p class="km-cap"><b>120</b><span>koltuk</span></p><i class="km-bar" style="--p:26.1%"></i><p class="km-use">Oyun, okuma, söyleşi</p></li><li class="km-hall"><span class="km-no">Salon 3</span><h3>Blackbox</h3><p class="km-cap"><b>110</b><span>koltuk</span></p><i class="km-bar" style="--p:23.9%"></i><p class="km-use">Deneysel sahne, atölye, prova</p></li><li class="km-hall km-aud"><span class="km-no">Seyirci</span><p class="km-cap"><b>+100.000</b></p><p class="km-use">tiyatro izleyicisi, her sezon</p></li></ul>
+<div class="km-foot"><p>Zeytinlik, Türkçü Sk. No:6, Bakırköy / İstanbul</p><a href="https://www.hopsahne.com">Program ve bilet: hopsahne.com</a></div>
 </section>
 
 <section id="hakkinda" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px; border-top: 1px solid #DCDEE1; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px 64px">
