@@ -84,7 +84,7 @@ a.it img{border-radius:4px}
 .pile{padding:14px 14px 16px;background:rgba(24,21,19,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
 .pile-art{aspect-ratio:4/3;border-radius:10px;background:radial-gradient(ellipse at 50% 40%,#2a2421,#171412);overflow:hidden}
 .it{box-shadow:0 12px 26px rgba(0,0,0,.55)}
-.kk img{aspect-ratio:2/3;object-fit:cover;object-position:18% 50%}
+.kk img{aspect-ratio:2/3;object-fit:cover}
 .lbl{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 4px 0;border-top:0}
 .lbl .n{font-size:11px;letter-spacing:.2em}
 .lbl .s{font-size:13px;color:#8F8A80}
@@ -384,6 +384,25 @@ html.seen .ap-load p{display:none}
 .band div.b-aud .det{color:#CFCFCF!important}
 .band div.b-aud:hover{background:#262626}.band div.b-aud:hover .num{color:#FFB27A!important}
 /*endbl*/
+/*cf*/
+.cf{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:880px}
+.cf label{display:flex;flex-direction:column;gap:6px}
+.cf label span{font-size:14px;font-weight:600}.cf label i{font-style:normal;font-weight:500;opacity:.7}
+.cf input,.cf select,.cf textarea{font:500 16px Inter,sans-serif;color:#0C0C0C;background:rgba(255,255,255,.92);border:1.5px solid rgba(12,12,12,.18);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .2s,background .2s;width:100%;box-sizing:border-box}
+.cf textarea{resize:vertical;min-height:110px}
+.cf input:focus,.cf select:focus,.cf textarea:focus{border-color:#0C0C0C;background:#fff}
+.cf .bad{border-color:#7A0B1D!important;background:#FFF0F0}
+.cf-w{grid-column:1/-1}
+.cf-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cf button{font:700 16px Inter,sans-serif;background:#0C0C0C;color:#fff;border:0;border-radius:999px;padding:16px 34px;cursor:pointer;transition:transform .2s,opacity .2s}
+.cf button:hover{transform:translateY(-2px)}.cf button[disabled]{opacity:.55;cursor:wait;transform:none}
+.cf-st{margin:0;font-weight:600}
+.cf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+@media (max-width:699px){.cf{grid-template-columns:1fr}}
+/*endcf*/
+/*kmb-m*/
+@media (max-width:999px){.corner a.km-btn{min-height:40px;padding:3px 12px 3px 3px;gap:8px}.km-th{width:34px;height:34px;box-shadow:0 0 0 1.5px rgba(255,255,255,.85)}.km-tx b{font-size:13px}.km-tx small{display:none}.km-btn:before{inset:-3px}.corner a.c-right{min-height:40px;padding:0 16px;font-size:13px}.hub{padding-top:80px}}
+/*endkmb-m*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -409,7 +428,7 @@ requestAnimationFrame(tick);
 <section id="ust" class="hub" aria-label="Hop Yapım">
 <nav class="corner" aria-label="Kısa yollar"><a class="c-left km-btn" href="#sahne"><span class="km-th" aria-hidden="true"><img src="img/ana-salon-k.jpg" alt=""></span><span class="km-tx"><b>Kültür Merkezimiz</b><small>Hop Sahne · 3 salon · 690 koltuk</small></span><svg class="km-ar" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a><a class="c-right" href="#iletisim">İletişim</a></nav>
 <div class="board orbit">
-<div class="ring" aria-hidden="true"></div><div class="lens" aria-hidden="true"></div><div class="core"><div class="brand"><h1 class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" role="img" aria-label="hop yapım"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></h1><div class="load" role="progressbar" aria-label="Yükleniyor"><span></span></div><p class="sub">Sinema · Dizi Film · Sahne Sanatları</p></div></div><div class="pile" style="--px:50.00%;--py:12.90%;--c:0.000;--s:-1.000;--k:0;--pr:-3deg;--cc:0.000;--cs:-1.000;--rc:18deg"><div class="pile-art"><a class="it kk" href="#sinema" style="--x:21%;--y:51%;--w:32%;--r:-6deg;--d:.05"><img src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak afişi"></a><a class="it" href="#sinema" style="--x:40%;--y:49%;--w:32%;--r:-2deg;--d:0.12"><img src="img/akif.jpg" alt="AKİF afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:60%;--y:49%;--w:32%;--r:2deg;--d:0.19"><img src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:79%;--y:51%;--w:32%;--r:6deg;--d:0.26"><img src="img/kafalar-karisik.jpg" alt="Kafalar Karışık afişi" loading="eager"></a></div><p class="lbl"><a href="#sinema">Sinema</a><span class="s">4 sinema ve TV filmi</span></p></div><div class="pile" style="--px:85.66%;--py:38.54%;--c:0.951;--s:-0.309;--k:1;--pr:2.5deg;--cc:0.866;--cs:-0.500;--rc:78deg"><div class="pile-art"><a class="it" href="#diziler" style="--x:50%;--y:50%;--w:90%;--r:0deg;--d:0.33"><img src="img/alman-kuzusu.jpg" alt="Alman Kuzusu afişi" loading="eager"></a></div><p class="lbl"><a href="#diziler">TV Dizisi</a><span class="s">Alman Kuzusu · TRT Türk</span></p></div><div class="pile" style="--px:72.04%;--py:80.01%;--c:0.588;--s:0.809;--k:2;--pr:-2deg;--cc:0.866;--cs:0.500;--rc:138deg"><div class="pile-art"><a class="it frame" href="#microdrama" style="--x:21%;--y:50%;--w:27%;--r:-6deg;--d:0.4"><b>Derinlerdeki<br>Tehlike</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:50%;--y:49%;--w:27%;--r:0deg;--d:0.47"><b>Perdenin<br>Arkasında</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:79%;--y:50%;--w:27%;--r:6deg;--d:0.54"><b>Gizli<br>Tehlike</b><span>Yakında</span></a></div><p class="lbl"><a href="#microdrama">Microdrama</a><span class="s">3 dikey dizi · DramaPops</span></p></div><div class="pile" style="--px:27.96%;--py:80.01%;--c:-0.588;--s:0.809;--k:3;--pr:2.5deg;--cc:0.000;--cs:1.000;--rc:198deg"><div class="pile-art"><a class="it" href="#sahne-yapimlari" style="--x:50%;--y:50%;--w:52%;--r:0deg;--d:0.61"><img src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" loading="eager"></a></div><p class="lbl"><a href="#muzikal">Müzikal</a><span class="s">İstanbul Efendisi Müzikali · <svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</span></p></div><div class="pile" style="--px:14.34%;--py:38.54%;--c:-0.951;--s:-0.309;--k:4;--pr:-2.5deg;--cc:-0.866;--cs:0.500;--rc:258deg"><div class="pile-art"><a class="it" href="#tiyatro" style="--x:34%;--y:50%;--w:38%;--r:-4deg;--d:0.68"><img src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" loading="eager"></a><a class="it" href="#tiyatro" style="--x:66%;--y:50%;--w:38%;--r:4deg;--d:0.75"><img src="img/inadina.jpg" alt="İnadına Yaşamak afişi" loading="eager"></a></div><p class="lbl"><a href="#tiyatro">Tiyatro Oyunları</a><span class="s">2 oyun · Hop Sahne</span></p></div>
+<div class="ring" aria-hidden="true"></div><div class="lens" aria-hidden="true"></div><div class="core"><div class="brand"><h1 class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" role="img" aria-label="hop yapım"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></h1><div class="load" role="progressbar" aria-label="Yükleniyor"><span></span></div><p class="sub">Sinema · Dizi Film · Sahne Sanatları</p></div></div><div class="pile" style="--px:50.00%;--py:12.90%;--c:0.000;--s:-1.000;--k:0;--pr:-3deg;--cc:0.000;--cs:-1.000;--rc:18deg"><div class="pile-art"><a class="it kk" href="#sinema" style="--x:21%;--y:51%;--w:32%;--r:-6deg;--d:.05"><img src="img/kendinden-kacak-afis.jpg" alt="Kendinden Kaçak afişi"></a><a class="it" href="#sinema" style="--x:40%;--y:49%;--w:32%;--r:-2deg;--d:0.12"><img src="img/akif.jpg" alt="AKİF afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:60%;--y:49%;--w:32%;--r:2deg;--d:0.19"><img src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:79%;--y:51%;--w:32%;--r:6deg;--d:0.26"><img src="img/kafalar-karisik.jpg" alt="Kafalar Karışık afişi" loading="eager"></a></div><p class="lbl"><a href="#sinema">Sinema</a><span class="s">4 sinema ve TV filmi</span></p></div><div class="pile" style="--px:85.66%;--py:38.54%;--c:0.951;--s:-0.309;--k:1;--pr:2.5deg;--cc:0.866;--cs:-0.500;--rc:78deg"><div class="pile-art"><a class="it" href="#diziler" style="--x:50%;--y:50%;--w:90%;--r:0deg;--d:0.33"><img src="img/alman-kuzusu.jpg" alt="Alman Kuzusu afişi" loading="eager"></a></div><p class="lbl"><a href="#diziler">TV Dizisi</a><span class="s">Alman Kuzusu · TRT Türk</span></p></div><div class="pile" style="--px:72.04%;--py:80.01%;--c:0.588;--s:0.809;--k:2;--pr:-2deg;--cc:0.866;--cs:0.500;--rc:138deg"><div class="pile-art"><a class="it frame" href="#microdrama" style="--x:21%;--y:50%;--w:27%;--r:-6deg;--d:0.4"><b>Derinlerdeki<br>Tehlike</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:50%;--y:49%;--w:27%;--r:0deg;--d:0.47"><b>Perdenin<br>Arkasında</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:79%;--y:50%;--w:27%;--r:6deg;--d:0.54"><b>Gizli<br>Tehlike</b><span>Yakında</span></a></div><p class="lbl"><a href="#microdrama">Microdrama</a><span class="s">3 dikey dizi · DramaPops</span></p></div><div class="pile" style="--px:27.96%;--py:80.01%;--c:-0.588;--s:0.809;--k:3;--pr:2.5deg;--cc:0.000;--cs:1.000;--rc:198deg"><div class="pile-art"><a class="it" href="#sahne-yapimlari" style="--x:50%;--y:50%;--w:52%;--r:0deg;--d:0.61"><img src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" loading="eager"></a></div><p class="lbl"><a href="#muzikal">Müzikal</a><span class="s">İstanbul Efendisi Müzikali · <svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</span></p></div><div class="pile" style="--px:14.34%;--py:38.54%;--c:-0.951;--s:-0.309;--k:4;--pr:-2.5deg;--cc:-0.866;--cs:0.500;--rc:258deg"><div class="pile-art"><a class="it" href="#tiyatro" style="--x:34%;--y:50%;--w:38%;--r:-4deg;--d:0.68"><img src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" loading="eager"></a><a class="it" href="#tiyatro" style="--x:66%;--y:50%;--w:38%;--r:4deg;--d:0.75"><img src="img/inadina.jpg" alt="İnadına Yaşamak afişi" loading="eager"></a></div><p class="lbl"><a href="#tiyatro">Tiyatro Oyunları</a><span class="s">2 oyun · Hop Sahne</span></p></div>
 </div>
 <dl class="stats band" aria-label="Rakamlarla Hop Yapım"><div style="--j:0"><dt class="tag"><a class="bl" href="#diziler">TV Dizisi</a></dt><dd class="num">4 sezon · 52 bölüm</dd><dd class="det">TRT Türk</dd></div><div style="--j:1"><dt class="tag"><a class="bl" href="#microdrama">Microdrama</a></dt><dd class="num">180 bölüm</dd><dd class="det">DramaPops · 3 dikey dizi</dd></div><div style="--j:2"><dt class="tag"><a class="bl" href="#sinema">Sinema</a></dt><dd class="num">4 film</dd><dd class="det">3 sinema · 1 TV filmi</dd></div><div style="--j:3"><dt class="tag"><a class="bl" href="#muzikal">Sahne</a></dt><dd class="num">3 yapım</dd><dd class="det">1 müzikal · 2 oyun</dd></div><div style="--j:4"><dt class="tag"><a class="bl" href="#muzikal">Ödül</a></dt><dd class="num"><svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</dd><dd class="det">İstanbul Efendisi Müzikali</dd></div><div class="b-aud" style="--j:5"><dt class="tag"><a class="bl" href="#sahne">Seyirci</a></dt><dd class="num">+100.000</dd><dd class="det">tiyatro izleyicisi, her sezon</dd></div></dl>
 </section>
@@ -449,10 +468,10 @@ requestAnimationFrame(tick);
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
 <article style="display: flex; flex-direction: column; gap: 14px">
-<img loading="lazy" src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 18% 50%; background: #FFFFFF; border-radius: 6px; display: block">
+<img loading="lazy" src="img/kendinden-kacak-afis.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; background: #FFFFFF; border-radius: 6px; display: block">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kendinden Kaçak</h3>
-<p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2021 · 1 sa 35 dk</p>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2022 · 1 sa 28 dk</p>
 </div>
 </article>
 <article style="display: flex; flex-direction: column; gap: 14px">
@@ -695,20 +714,18 @@ requestAnimationFrame(tick);
 <div style="max-width: 1240px; margin: 0 auto; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 48px">
 <h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(44px, 8vw, 112px); line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase">Birlikte<br>üretelim.</h2>
 <p style="margin: 0; max-width: 620px; font-size: 20px; font-weight: 500">Kanallar ve platformlar için yeni dizi, film ve microdrama projelerini konuşmaya hazırız.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 40px; font-size: 18px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; font-weight: 600">E-posta</span>
-<a href="mailto:[E-POSTA]" style="color: #0C0C0C; font-weight: 600; padding: 10px 0">[E-POSTA ADRESİ]</a>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; font-weight: 600">Telefon</span>
-<span style="font-weight: 600; padding: 10px 0">[TELEFON]</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 14px; font-weight: 600">Adres</span>
-<span style="font-weight: 600; padding: 10px 0">Zeytinlik, Türkçü Sk. No:6, Bakırköy / İstanbul</span>
-</div>
-</div>
+<form class="cf" id="cf" action="https://formsubmit.co/mail@harunturk.com" method="POST" novalidate>
+<input type="hidden" name="_subject" value="hopyapim.com · Yeni iletişim mesajı">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label><span>Ad Soyad</span><input name="Ad Soyad" required autocomplete="name"></label>
+<label><span>Kurum / Kanal</span><input name="Kurum" autocomplete="organization"></label>
+<label><span>E-posta</span><input type="email" name="email" required autocomplete="email"></label>
+<label><span>Telefon <i>(isteğe bağlı)</i></span><input type="tel" name="Telefon" autocomplete="tel"></label>
+<label class="cf-w"><span>Konu</span><select name="Konu"><option>Dizi / film projesi</option><option>Microdrama</option><option>Sahne / müzikal</option><option>Kültür merkezi · salon kiralama</option><option>Eğitimler</option><option>Diğer</option></select></label>
+<label class="cf-w"><span>Mesajınız</span><textarea name="Mesaj" rows="4" required></textarea></label>
+<div class="cf-w cf-row"><button type="submit">Gönder</button><p class="cf-st" role="status" aria-live="polite"></p></div>
+</form>
 <div style="border-top: 1px solid #0C0C0C; padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 500">
 <span>© 2026 Hop Yapım</span>
 <span>Film · Dizi · Tiyatro · Sahne · Eğitim</span>
@@ -717,5 +734,12 @@ requestAnimationFrame(tick);
 </footer>
 
 </div>
+<script>
+(function(){var f=document.getElementById('cf');if(!f)return;var st=f.querySelector('.cf-st'),b=f.querySelector('button');
+f.addEventListener('submit',function(e){e.preventDefault();var ok=true;f.querySelectorAll('[required]').forEach(function(x){var v=x.value.trim();var g=v&&(x.type!=='email'||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));x.classList.toggle('bad',!g);if(!g)ok=false});
+if(!ok){st.textContent='Lütfen işaretli alanları doldurun.';return}
+b.disabled=true;st.textContent='Gönderiliyor…';
+fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(r){return r.json().then(function(d){return [r.ok,d]})}).then(function(x){if(x[0]&&String(x[1].success)==='true'){f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'}else throw 0}).catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){b.disabled=false})});})();
+</script>
 </body>
 </html>
