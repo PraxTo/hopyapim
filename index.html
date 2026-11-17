@@ -455,7 +455,7 @@ transform:translate(-50%,-50%) rotate(var(--pr,0deg));opacity:1;animation:mOut 1
 .orbit .pile[style*="--k:0;"]{--sa:#1D3A8F;--sb:#2F57C9}
 .orbit .pile[style*="--k:1;"]{--sa:#0B6B73;--sb:#12959E}
 .orbit .pile[style*="--k:2;"]{--sa:#5B21B6;--sb:#8B3DF0}
-.orbit .pile[style*="--k:3;"]{--sa:#A87411;--sb:#D9A12A}
+.orbit .pile[style*="--k:3;"]{--sa:#6E4F08;--sb:#E0B13A}
 .orbit .pile[style*="--k:4;"]{--sa:#1B5E3A;--sb:#2E8B57}
 .orbit .pile{background:linear-gradient(155deg,var(--sb),var(--sa))!important;border-color:transparent!important;box-shadow:0 26px 50px -22px color-mix(in srgb,var(--sa) 70%,transparent),inset 0 1px 0 rgba(255,255,255,.18)!important}
 .orbit .pile:hover{box-shadow:0 32px 60px -20px color-mix(in srgb,var(--sa) 80%,transparent),0 0 0 2px rgba(255,255,255,.55)!important}
@@ -542,6 +542,18 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 .km-aud{background:linear-gradient(135deg,#C8102E 0%,#8E0B21 100%)!important;border-color:#8E0B21!important}
 .km-aud .km-no{color:rgba(255,255,255,.8)!important}.km-aud .km-use{color:rgba(255,255,255,.88)!important}
 /*endaud*/
+/*gold*/
+.orbit .pile[style*="--k:3;"]{background:linear-gradient(150deg,#F3D27A 0%,#D9A62B 28%,#A9790F 62%,#6E4F08 100%)!important;overflow:hidden}
+.orbit .pile[style*="--k:3;"]::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.38) 50%,transparent 58%);transform:translateX(-60%);animation:goldSheen 5s 3.5s ease-in-out infinite;pointer-events:none;z-index:1}
+@keyframes goldSheen{0%{transform:translateX(-60%)}35%,100%{transform:translateX(60%)}}
+.orbit .pile[style*="--k:3;"] .lbl,.orbit .pile[style*="--k:3;"] .pile-art{position:relative;z-index:2}
+.orbit .pile[style*="--k:3;"] .lbl a{text-shadow:0 1px 2px rgba(60,40,0,.35)}
+.orbit .pile[style*="--k:3;"] .lbl .s{color:#FFF6DC!important}
+.orbit .pile[style*="--k:3;"] .lbl .s .cup{color:#fff!important}
+.orbit .pile[style*="--k:3;"]::before{content:"3 ÖDÜL";position:absolute;top:10px;right:10px;z-index:3;font:800 10px Inter,sans-serif;letter-spacing:.14em;color:#5A3F00;background:linear-gradient(180deg,#FFF1C4,#F2C94C);padding:4px 9px;border-radius:999px;box-shadow:0 4px 10px -4px rgba(90,63,0,.6)}
+@media (prefers-reduced-motion:reduce){.orbit .pile[style*="--k:3;"]::after{animation:none;display:none}}
+.band div:has(a[href="#muzikal"]) .tag{background:linear-gradient(180deg,#FFF1C4,#F2C94C)!important;border-color:#E3B23C!important;color:#5A3F00!important}
+/*endgold*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
