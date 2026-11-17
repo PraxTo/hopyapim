@@ -895,6 +895,11 @@ requestAnimationFrame(tick);
 
 <div style="border-top: 1px solid #262626; padding-top: 28px; display: flex; flex-direction: column; gap: 20px">
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #A6A6A6">HOP YAPIM'A BAŞVURULAR LMF ÜZERİNDEN</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; background: #161616; border: 1px solid #262626; border-left: 3px solid #F0883A; border-radius: 12px; padding: 18px 22px">
+<p style="margin: 0; flex: 1 1 420px; font-size: 16px; line-height: 1.55; color: #E6E6E6">Bize senaryo göndermek ya da çekimlerde ekibimizin bir parçası olmak istiyorsanız, önce LMF'de projenizi veya profilinizi oluşturun. Ardından <b style="color:#FFFFFF">proje adını ya da profil bağlantınızı</b> bizimle paylaşın. <b style="color:#F0883A">Tüm mesajları okuyoruz.</b></p>
+<a href="#iletisim" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #F0883A; font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap">Bize iletin
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+</div>
 <div style="display: flex; flex-wrap: wrap; gap: 20px 48px">
 
 <div style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px">
@@ -946,7 +951,8 @@ requestAnimationFrame(tick);
 <label><span>Kurum / Kanal</span><input name="Kurum" autocomplete="organization"></label>
 <label><span>E-posta</span><input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="ornek@sirket.com" autocapitalize="off" spellcheck="false"></label>
 <label><span>Telefon <i>(isteğe bağlı)</i></span><input type="tel" name="Telefon" autocomplete="tel" inputmode="tel" placeholder="0 5XX XXX XX XX" maxlength="20"></label>
-<label class="cf-w"><span>Konu</span><select name="Konu"><option>Dizi / film projesi</option><option>Microdrama</option><option>Sahne / müzikal</option><option>Kültür merkezi · salon kiralama</option><option>Eğitimler</option><option>Diğer</option></select></label>
+<label class="cf-w"><span>Konu</span><select name="Konu"><option>Dizi / film projesi</option><option>Senaryo gönderimi (LMF)</option><option>Ekibe katılım (LMF)</option><option>Microdrama</option><option>Sahne / müzikal</option><option>Kültür merkezi · salon kiralama</option><option>Eğitimler</option><option>Diğer</option></select></label>
+<label class="cf-w"><span>LMF proje adı ya da profil bağlantısı <i>(isteğe bağlı)</i></span><input name="LMF" maxlength="300" placeholder="Proje adı ya da letsmakeafilm.com/… bağlantısı"></label>
 <label class="cf-w"><span>Mesajınız</span><textarea name="Mesaj" rows="4" required></textarea></label>
 <div class="cf-w cf-row"><button type="submit">Gönder</button><p class="cf-st" role="status" aria-live="polite"></p></div>
 </form>
@@ -980,7 +986,7 @@ f.addEventListener('submit',function(e){e.preventDefault();var msg='';
  bt.disabled=true;st.textContent='Gönderiliyor…';
  var v=function(n){var x=f.querySelector('[name="'+n+'"]');return x&&x.value.trim()?x.value.trim():null};
  fetch('https://uotynojgbnalejgffzlp.supabase.co/rest/v1/hopyapim_mesajlar',{method:'POST',headers:{'apikey':'sb_publishable_qdGqRcSXCNijmRllk5FbPQ_UmYiIvo0','Content-Type':'application/json','Prefer':'return=minimal'},
-  body:JSON.stringify({ad_soyad:v('Ad Soyad'),kurum:v('Kurum'),email:v('email'),telefon:v('Telefon'),konu:v('Konu'),mesaj:v('Mesaj')})})
+  body:JSON.stringify({ad_soyad:v('Ad Soyad'),kurum:v('Kurum'),email:v('email'),telefon:v('Telefon'),konu:v('Konu'),mesaj:(v('LMF')?'[LMF] '+v('LMF')+'\n\n':'')+(v('Mesaj')||'')})})
  .then(function(r){if(!r.ok)throw 0;f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'})
  .catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){bt.disabled=false})});})();
 </script>
