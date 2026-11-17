@@ -403,6 +403,36 @@ html.seen .ap-load p{display:none}
 /*kmb-m*/
 @media (max-width:999px){.corner a.km-btn{min-height:40px;padding:3px 12px 3px 3px;gap:8px}.km-th{width:34px;height:34px;box-shadow:0 0 0 1.5px rgba(255,255,255,.85)}.km-tx b{font-size:13px}.km-tx small{display:none}.km-btn:before{inset:-3px}.corner a.c-right{min-height:40px;padding:0 16px;font-size:13px}.hub{padding-top:80px}}
 /*endkmb-m*/
+/*mob*/
+@media (max-width:999px){
+.hub{height:100svh;min-height:560px;max-height:1000px;box-sizing:border-box;display:flex;flex-direction:column;padding:70px 10px 0!important}
+.orbit{position:relative;display:block!important;flex:1 1 auto;min-height:0;width:100%;max-width:none;aspect-ratio:auto;--cw:min(31vw,19svh,180px);--ch:calc(var(--cw) * 1.0)}
+.orbit .ring{display:block!important;position:absolute;border-radius:50%;border:1px solid rgba(255,122,26,.32);left:calc(var(--cw) / 2 + 4px);right:calc(var(--cw) / 2 + 4px);top:calc(var(--ch) / 2 + 6px);bottom:calc(var(--ch) / 2 + 6px);width:auto;height:auto;animation:none}
+.orbit .ring::after{display:none}
+.orbit .core{position:absolute!important;left:50%;top:50%;transform:translate(-50%,-50%);width:auto;z-index:3;padding:0!important;order:0}
+.orbit .core::before{display:none}
+.orbit .logo-svg{width:min(26vw,15svh)!important}
+.orbit .sub{font-size:10px!important;letter-spacing:.02em;white-space:nowrap;margin-top:2px}
+.orbit .brand{gap:6px;align-items:center}
+.orbit .pile{position:absolute!important;width:var(--cw);box-sizing:border-box;padding:6px 6px 8px!important;border-radius:11px!important;gap:0!important;z-index:2;
+left:calc(50% + var(--c) * (50% - var(--cw) / 2 - 2px));top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 4px));
+transform:translate(-50%,-50%) rotate(var(--pr,0deg));opacity:1;animation:mOut 1s calc(.15s + var(--k,0) * .1s) cubic-bezier(.2,.8,.2,1) both!important}
+@keyframes mOut{from{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) scale(.3)}30%{opacity:1}to{opacity:1}}
+.orbit .pile-art{aspect-ratio:4/3;border-radius:7px}
+.orbit .lbl{padding:6px 2px 0!important;justify-content:center}
+.orbit .lbl a{font-size:clamp(13px,2.4vw,18px)!important;white-space:nowrap}
+.orbit .lbl .s,.orbit .lbl .n{display:none!important}
+.orbit .frame b{font-size:7px}.orbit .frame span{font-size:6px}
+.band{grid-template-columns:repeat(3,minmax(0,1fr))!important;margin:6px -10px 0!important;width:calc(100% + 20px)!important;box-sizing:border-box}
+.band div{padding:8px 4px 9px!important;gap:3px!important;border-left:1px solid #EDEEF0!important;border-top:1px solid #EDEEF0}
+.band div:nth-child(3n+1){border-left:0!important}
+.band .tag{font-size:8px!important;padding:2px 7px!important;letter-spacing:.1em!important}
+.band .num{font-size:13.5px!important;white-space:nowrap}
+.band .det{font-size:9.5px!important;line-height:1.25;white-space:normal}
+.band div.b-aud{border-left-color:#141414!important}
+}
+@media (max-width:999px) and (max-height:700px){.band .det{display:none}}
+/*endmob*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
