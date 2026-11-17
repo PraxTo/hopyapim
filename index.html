@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hop Yapım — Film, Dizi, Tiyatro</title>
+<meta name="description" content="Hop Yapım: sinema filmleri, TV dizileri, microdrama, müzikal ve tiyatro yapımları. Yapımcı Harun Türk.">
+<meta property="og:title" content="Hop Yapım">
+<meta property="og:description" content="Sahne. Perde. Ekran. Tek çatı.">
+<meta property="og:image" content="img/salon-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Jost:wght@500&family=Inter:wght@400;500;600&display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F2F3F5}
+a{color:#141414;text-decoration:none}a:hover{color:#FF7A1A}
+
+
+
+
+
+
+/*hub*/
+.hub{position:relative;overflow:hidden;padding:36px 32px 64px;background:radial-gradient(ellipse 60% 45% at 50% 45%,rgba(255,170,90,.10),rgba(255,170,90,0) 70%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"),#141110}
+.board{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 28px;align-items:center}
+.core{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.logo{margin:0;display:flex;align-items:center;gap:.28em;font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(40px,4.6vw,72px);line-height:1;letter-spacing:-.035em;color:#F4F1EA;opacity:0;animation:rise .9s .1s cubic-bezier(.2,.8,.2,1) forwards}
+.logo .yp{margin-left:.14em}
+.dot{width:.32em;height:.32em;border-radius:50%;background:#FF7A1A;box-shadow:0 0 28px rgba(255,122,26,.75);animation:pulse 2.8s ease-in-out infinite}
+.sub{margin:0;font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(15px,1.3vw,19px);color:#C9C5BC;opacity:0;animation:rise .9s .3s cubic-bezier(.2,.8,.2,1) forwards}
+.hint{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8F8A80;opacity:0;animation:rise .9s .5s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.pile{display:flex;flex-direction:column;gap:12px;padding:18px 18px 14px;background:linear-gradient(180deg,#201c19,#181513);border:1px solid rgba(255,255,255,.10);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.45);transition:border-color .35s,box-shadow .35s}
+.pile:hover{border-color:rgba(255,122,26,.6);box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,122,26,.25)}
+.pile-art{position:relative;width:100%;aspect-ratio:460/340}
+.it{position:absolute;left:var(--x);top:var(--y);width:var(--w);transform:translate(-50%,-50%) rotate(var(--r));border-radius:4px;box-shadow:0 14px 30px rgba(0,0,0,.6),0 2px 6px rgba(0,0,0,.5);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;opacity:0;animation:drop .8s calc(.4s + var(--d,0)*1s) cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes drop{from{opacity:0;transform:translate(-50%,-62%) rotate(calc(var(--r) * 2.2)) scale(1.18)}to{opacity:1;transform:translate(-50%,-50%) rotate(var(--r))}}
+a.it{display:block}
+a.it.frame{display:flex}
+img.it,.it img{display:block;width:100%;height:auto}
+a.it img{border-radius:4px}
+.it:hover,.it:focus-visible{transform:translate(-50%,-52%) rotate(0deg) scale(1.1);z-index:5;box-shadow:0 28px 60px rgba(0,0,0,.75),0 0 0 2px #FF7A1A;outline:none}
+.frame{aspect-ratio:9/16;background:linear-gradient(160deg,#2a2622,#171412);border:2px dashed rgba(255,255,255,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;text-align:center;box-sizing:border-box}
+.frame b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(12px,1vw,15px);line-height:1.15;color:#F4F1EA}
+.frame span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FF7A1A}
+.paper{background:#F4F1EA;color:#141110;padding:7% 8%;box-sizing:border-box;border-radius:3px}
+.paper h3{margin:0 0 6px;word-spacing:.18em;font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(16px,1.5vw,22px);letter-spacing:-.02em}
+.paper p{margin:0;font-size:clamp(11px,.95vw,14px);line-height:1.5;color:#3d3933}
+.paper .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C2410C;font-weight:600;margin-bottom:4px}
+.lbl{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:12px 2px 0;margin:0;border-top:1px solid rgba(255,255,255,.08)}
+.lbl a{white-space:nowrap}
+.lbl .n{font-size:12px;font-weight:600;letter-spacing:.14em;color:#FF7A1A}
+.lbl a{font-family:Archivo,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:#F4F1EA}
+.lbl a:hover{color:#FF7A1A}
+.lbl .s{font-size:14px;color:#A8A49B}
+@media (max-width:899px){
+.hub{padding:40px 18px 56px}
+.board{grid-template-columns:1fr;gap:36px}
+.core{order:-1;padding:12px 0 8px}
+.lbl a{font-size:21px}
+.frame b{font-size:15px}.paper h3{font-size:20px}.paper p{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.logo,.sub,.hint,.it{animation:none;opacity:1}.dot{animation:none}}
+
+@media (min-width:1000px){
+.orbit{position:relative;display:block;max-width:1440px;aspect-ratio:1440/1320}
+.orbit .ring{position:absolute;left:12.5%;top:12.9%;width:75%;height:74.2%;border-radius:50%;border:1.5px dashed rgba(255,122,26,.35);box-shadow:0 0 80px rgba(255,122,26,.06) inset;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36%}
+.orbit .pile{position:absolute;left:var(--px);top:var(--py);width:23%;box-sizing:border-box;transform:translate(-50%,-50%);z-index:1;animation:orbitIn 1s calc(.25s + var(--k)*.08s) cubic-bezier(.2,.8,.2,1) both}
+.orbit .pile:hover{z-index:4}
+@keyframes orbitIn{from{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) scale(.35)}to{opacity:1}}
+.orbit .lbl a{font-size:clamp(17px,1.55vw,22px)}
+.orbit .lbl .s{font-size:clamp(12px,.95vw,14px)}
+}
+@media (max-width:999px){.ring{display:none}.board{grid-template-columns:repeat(2,minmax(0,1fr))}.core{grid-column:1/-1}}
+@media (max-width:640px){.board{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.orbit .pile,.orbit .ring{animation:none}}
+
+/* estetik */
+.hub{background:radial-gradient(circle at 50% 50%,rgba(255,122,26,.09),rgba(255,122,26,0) 38%),radial-gradient(ellipse at 50% 120%,rgba(255,122,26,.05),transparent 60%),#100e0d}
+.pile{padding:14px 14px 16px;background:rgba(24,21,19,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.pile-art{aspect-ratio:4/3;border-radius:10px;background:radial-gradient(ellipse at 50% 40%,#2a2421,#171412);overflow:hidden}
+.it{box-shadow:0 12px 26px rgba(0,0,0,.55)}
+.kk img{aspect-ratio:2/3;object-fit:cover;object-position:18% 50%}
+.lbl{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 4px 0;border-top:0}
+.lbl .n{font-size:11px;letter-spacing:.2em}
+.lbl .s{font-size:13px;color:#8F8A80}
+.contact{background:linear-gradient(140deg,#FF7A1A,#C2410C);color:#140d08;border-radius:8px;display:flex!important;flex-direction:column;justify-content:space-between;aspect-ratio:16/10;padding:8% 9%;box-sizing:border-box}
+.contact .ck{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.contact .ct2{font-family:Archivo,sans-serif;font-weight:900;font-size:clamp(22px,2.1vw,32px);line-height:.95;letter-spacing:-.03em}
+.contact .ca{font-weight:600;font-size:14px}
+@media (min-width:1000px){
+.orbit .ring{border:1px solid rgba(255,122,26,.22);box-shadow:none;animation:none}
+.orbit .ring::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid transparent;border-top-color:rgba(255,122,26,.9);animation:spin 14s linear infinite;filter:drop-shadow(0 0 6px rgba(255,122,26,.8))}
+.orbit .pile{width:22.5%}
+.orbit .core::before{content:"";position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(255,255,255,.06);pointer-events:none}
+.orbit .lbl a{font-size:clamp(17px,1.45vw,21px)}
+}
+.frame b{font-size:clamp(11px,.9vw,14px)}
+.frame span{font-size:10px;letter-spacing:.12em}
+.lbl{padding-top:10px}
+.lbl{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
+.lbl .s{flex-basis:100%}
+/* açık tema */
+.hub{background:radial-gradient(circle at 50% 50%,rgba(255,122,26,.07),rgba(255,122,26,0) 36%),#EEF0F2}
+.logo{color:#141414}
+.sub{color:#4A4A4A}
+.hint{color:#8A8A8A}
+.dot{box-shadow:0 0 18px rgba(255,122,26,.45)}
+.pile{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid #E2E4E7;box-shadow:0 24px 48px -24px rgba(20,24,32,.22)}
+.pile:hover{border-color:rgba(255,122,26,.7);box-shadow:0 30px 60px -22px rgba(20,24,32,.3),0 0 0 1px rgba(255,122,26,.3)}
+.pile-art{background:#F4F5F7}
+.it{box-shadow:0 10px 22px rgba(20,24,32,.22)}
+.it:hover,.it:focus-visible{box-shadow:0 22px 44px rgba(20,24,32,.3),0 0 0 2px #FF7A1A}
+.lbl a{color:#141414}
+.lbl .s{color:#6B6B6B}
+.frame{background:#FAFAFB;border:2px dashed #C9CACE}
+.frame b{color:#141414}
+@media (min-width:1000px){.orbit .ring{border-color:rgba(255,122,26,.30)}.orbit .core::before{border-color:rgba(0,0,0,.06)}}
+
+/* logo iki satır + eğik kartlar */
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.logo{flex-direction:column;align-items:flex-start;gap:0;font-size:clamp(60px,6.6vw,104px);line-height:.86;letter-spacing:-.045em}
+.logo .l2{display:inline-flex;align-items:flex-end}
+.logo .dot{display:inline-block;width:.19em;height:.19em;margin:0 0 .15em .06em;flex:none;box-shadow:none;animation:pulse 2.8s ease-in-out infinite}
+.sub,.hint{text-align:left}
+@media (min-width:1000px){
+.orbit .pile{transform:translate(-50%,-50%) rotate(var(--pr,0deg));transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s}
+.orbit .pile:hover{transform:translate(-50%,-50%) rotate(0deg) scale(1.04)}
+.orbit .core{display:flex;justify-content:center}
+}
+@media (max-width:999px){.core{align-items:center}.brand{align-items:flex-start}}
+
+.logo-svg{margin:0;width:clamp(190px,17vw,260px);line-height:0;opacity:0;animation:rise .9s .1s cubic-bezier(.2,.8,.2,1) forwards}
+.logo-svg svg{width:100%;height:auto;display:block;overflow:visible}
+.logo-svg .pdot{transform-box:fill-box;transform-origin:center;animation:pulse 2.8s ease-in-out infinite}
+.brand{align-items:center}
+.sub,.hint{text-align:center}
+@media (max-width:899px){.hide-m{display:none}}
+
+/* giriş ekranı tek ekrana sığsın */
+@media (min-width:1000px){
+.hub{height:100vh;min-height:640px;padding:16px 24px;box-sizing:border-box}
+.orbit{--cw:min(15.5vw,23vh);--ch:calc(var(--cw) * 1.06);max-width:none;width:100%;height:100%;aspect-ratio:auto}
+.orbit .pile{width:var(--cw);left:calc(50% + var(--c) * (50% - var(--cw) / 2 - 10px));top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 10px));padding:10px 10px 12px;border-radius:14px}
+.orbit .ring{left:calc(var(--cw) / 2 + 10px);right:calc(var(--cw) / 2 + 10px);top:calc(var(--ch) / 2 + 10px);bottom:calc(var(--ch) / 2 + 10px);width:auto;height:auto}
+.orbit .core{width:auto}
+.orbit .core::before{width:min(340px,40vh);height:min(340px,40vh)}
+.logo-svg{width:min(15vw,24vh)}
+.orbit .lbl{padding-top:8px}
+.orbit .lbl a{font-size:clamp(15px,1.15vw,20px)}
+.orbit .lbl .s{font-size:12px}
+.orbit .lbl .n{font-size:10px}
+}
+@media (min-width:1000px){.orbit .ring::after{display:none}}
+@media (min-width:1000px){.orbit .frame{padding:4px;gap:6px;border-width:1.5px}.orbit .frame b{font-size:calc(var(--cw) * .04)}.orbit .frame span{font-size:calc(var(--cw) * .033);letter-spacing:.08em}.orbit .contact .ct2{font-size:calc(var(--cw) * .11)}.orbit .contact .ck{font-size:calc(var(--cw) * .04)}.orbit .contact .ca{font-size:calc(var(--cw) * .05)}}
+
+/* 3 sn yükleme + kartlar logonun altından kayar */
+.load{width:100%;max-width:220px;height:6px;border-radius:999px;background:#E2E4E7;overflow:hidden;animation:loadOut .5s 3s ease forwards}
+.load span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#FF7A1A,#C2410C);animation:fill 3s cubic-bezier(.4,.1,.3,1) forwards}
+@keyframes fill{to{width:100%}}
+@keyframes loadOut{to{opacity:0;height:0;margin:-8px 0 0}}
+.sub{animation-delay:.3s}
+.hint{animation-delay:3.3s}
+.orbit .core{z-index:6}
+.it{animation-delay:calc(3.9s + var(--d,0) * .5s)}
+@media (min-width:1000px){
+.orbit .pile{animation:orbitIn 1.1s calc(3.2s + var(--k) * .14s) cubic-bezier(.2,.8,.2,1) both}
+@keyframes orbitIn{from{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) rotate(0deg) scale(.25)}25%{opacity:1}to{opacity:1}}
+}
+@media (max-width:999px){.pile{opacity:0;animation:rise .8s calc(3.2s + var(--k,0) * .1s) cubic-bezier(.2,.8,.2,1) forwards}}
+@media (prefers-reduced-motion:reduce){.load{display:none}.pile,.it,.hint{animation:none!important;opacity:1}}
+@media (min-width:1000px){.orbit .ring{opacity:0;animation:fadeIn 1s 3.1s ease forwards}}
+@keyframes fadeIn{to{opacity:1}}
+@media (min-width:1000px){.orbit .core::before{background:radial-gradient(circle,#EEF0F2 0,#EEF0F2 62%,rgba(238,240,242,0) 71%);z-index:-1}.orbit .brand{position:relative;z-index:1}}
+
+/* 6 kart + köşe bağlantıları */
+@media (min-width:1000px){.orbit{--cw:min(18.5vw,27.5vh)}.orbit .lens{width:calc(var(--cw) * 2.5)}}
+.corner a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;font:600 14px Inter,sans-serif;letter-spacing:.02em;box-sizing:border-box;transition:transform .25s,box-shadow .25s,background .25s}
+.c-left{background:#FFFFFF;color:#141414;border:1px solid #E2E4E7;box-shadow:0 10px 24px -14px rgba(20,24,32,.35)}
+.c-left:hover{border-color:#FF7A1A;color:#141414;transform:translateY(-2px)}
+.c-right{background:linear-gradient(140deg,#FF7A1A,#C2410C);color:#fff!important;box-shadow:0 12px 26px -12px rgba(194,65,12,.6)}
+.c-right:hover{transform:translateY(-2px);color:#fff}
+.corner a{position:fixed;top:18px;z-index:30;opacity:0;animation:rise .7s 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+.c-left{left:20px}.c-right{right:20px}
+@media (max-width:999px){.hub{padding-top:84px}.corner a{position:absolute;top:20px}}
+@media (prefers-reduced-motion:reduce){.corner a{animation:none;opacity:1}}
+@media (min-width:1000px){.logo-svg{width:min(13.5vw,20vh)}.orbit .core::before{width:min(320px,36vh);height:min(320px,36vh)}}
+@media (min-width:1000px) and (max-height:800px){.orbit .hint{display:none}}
+
+/* rakamlar logonun altına dökülür */
+.stats{margin:4px 0 0;display:grid;grid-template-columns:repeat(3,auto);gap:10px 26px;justify-content:center}
+.stats div{display:flex;flex-direction:column-reverse;align-items:center;text-align:center;opacity:0;animation:pour .75s calc(1.35s + var(--j) * .12s) cubic-bezier(.3,1.4,.5,1) forwards}
+.stats dd{margin:0;font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(15px,1.25vw,20px);letter-spacing:-.01em;color:#141414;white-space:nowrap}
+.stats dt{font-size:clamp(10px,.75vw,12px);color:#6B6B6B;white-space:nowrap}
+.stats div:first-child dd,.stats div:nth-child(2) dd{color:#C2410C}
+@keyframes pour{from{opacity:0;transform:translateY(-28px) scale(.9)}to{opacity:1;transform:none}}
+@media (min-width:1000px){.brand{gap:10px}.orbit .sub{font-size:clamp(13px,1vw,16px)}.orbit .core::before{display:none}}
+@media (max-width:999px){.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px;width:100%}.stats dd{font-size:18px}.stats dt{font-size:12px;white-space:normal}.brand{align-items:center;width:100%}}
+@media (prefers-reduced-motion:reduce){.stats div{animation:none;opacity:1}}
+@media (min-width:1000px){.orbit{--cw:min(18.5vw,25vh)}.logo-svg{width:min(12.5vw,17vh)}.orbit .lens{width:calc(var(--cw) * 2.5)}}
+
+/* alt bant */
+.band{position:relative;margin:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;background:#FFFFFF;border-top:1px solid #E2E4E7;box-shadow:0 -14px 30px -24px rgba(20,24,32,.35)}
+.band div{padding:14px 10px;border-left:1px solid #EDEEF0;opacity:0;animation:pourDown .9s calc(1.5s + var(--j) * .12s) cubic-bezier(.3,1.25,.5,1) forwards}
+.band div:first-child{border-left:0}
+.band dd{font-size:clamp(15px,1.3vw,21px)}
+.band dt{font-size:clamp(10px,.8vw,12px)}
+@keyframes pourDown{from{opacity:0;transform:translateY(-34vh) scale(.55)}55%{opacity:1}to{opacity:1;transform:none}}
+@media (min-width:1000px){
+.hub{display:flex;flex-direction:column;padding:16px 24px 0}
+.orbit{flex:1 1 auto;height:auto;min-height:0}
+.band{margin:0 -24px}
+}
+@media (max-width:999px){.band{grid-template-columns:repeat(2,minmax(0,1fr));margin:8px -18px 0;row-gap:0}.band div{border-top:1px solid #EDEEF0;animation-name:rise}.band div:nth-child(odd){border-left:0}}
+@media (prefers-reduced-motion:reduce){.band div{animation:none;opacity:1}}
+@media (min-width:1000px){.orbit{--cw:min(18.5vw,23.5vh)}}
+@media (min-width:1000px){.orbit .pile{top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 22px))}}
+@media (min-width:1000px) and (max-height:760px){.orbit{--cw:min(18.5vw,21.5vh)}}
+@media (min-width:1000px) and (max-height:760px){.orbit .pile{top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 30px))}}
+@media (min-width:1000px) and (max-height:760px){.orbit{--cw:min(18.5vw,20vh)}.orbit .pile{top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 22px))}}
+@media (min-width:1000px) and (max-height:760px){.orbit .pile{top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 30px))}}
+
+/* bant etiketleri */
+.band div{flex-direction:column;align-items:center;gap:5px;padding:12px 10px 13px}
+.band .tag{display:inline-block;padding:3px 10px;border-radius:999px;background:#FFF1E6;border:1px solid #FFD2B0;color:#C2410C;font:700 10px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.band .num{margin:0;font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(15px,1.3vw,21px);letter-spacing:-.01em;color:#141414;white-space:nowrap}
+.band .det{margin:0;font-size:clamp(10px,.8vw,12px);color:#6B6B6B;white-space:nowrap}
+.band div:first-child .num,.band div:nth-child(2) .num{color:#141414}
+@media (max-width:999px){.band .det{white-space:normal;text-align:center}.band .num{font-size:18px}}
+.band div .det{color:#6B6B6B!important}
+@media (min-width:1000px) and (max-height:800px){.band div{padding:8px 8px 9px;gap:3px}.band .tag{padding:2px 9px;font-size:9px}.orbit{--cw:min(18.5vw,19vh)}}
+
+/* 5 kart */
+@media (min-width:1000px){.orbit{--cw:min(19vw,26vh)}.orbit .pile{top:calc(50% + var(--s) * (50% - var(--ch) / 2 - 22px))}}
+@media (min-width:1000px) and (max-height:800px){.orbit{--cw:min(19vw,24vh)}}
+
+.cup{display:inline-block;width:1em;height:1em;vertical-align:-.12em;margin-right:.3em;color:#FF7A1A}
+.band .num .cup{width:.95em;height:.95em}
+.lbl .s .cup{width:1.05em;height:1.05em;margin-right:.2em}
+/*endhub*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ap*/
+.hub .load{display:none}
+html.wait .hub *,html.wait .hub *::after,html.wait .hub *::before{animation-play-state:paused!important}
+.ap-load{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:50;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;background:rgba(255,255,255,.94);box-shadow:0 20px 40px -18px rgba(20,24,32,.35);pointer-events:none;transition:opacity .35s,visibility .35s}
+html:not(.wait) .ap-load{opacity:0;visibility:hidden}
+.ap-bar{width:180px;height:5px;border-radius:999px;background:#E2E4E7;overflow:hidden}
+.ap-bar span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#FF7A1A,#C2410C);transition:width .2s linear}
+.ap-load p{margin:0;font:600 10px Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A}
+html.seen .ap-load p{display:none}
+.hint{animation-delay:1.5s}
+.it{animation-delay:calc(1.45s + var(--d,0) * .45s)}
+@media (min-width:1000px){
+.orbit .core{z-index:3}
+.orbit .pile{z-index:2;animation:slideOut 1.1s calc(.15s + var(--k) * .12s) cubic-bezier(.2,.8,.2,1) both}
+@keyframes slideOut{from{left:50%;top:50%;opacity:0;transform:translate(-50%,-50%) rotate(0deg) scale(.3)}25%{opacity:1}to{opacity:1}}
+.orbit .lens{display:none}
+.orbit .ring{animation-delay:.4s}
+.orbit .core .brand{opacity:0;filter:blur(18px);animation:focusIn 1.3s 0s cubic-bezier(.3,0,.2,1) forwards}
+@keyframes focusIn{0%{opacity:0;filter:blur(18px);transform:scale(.96)}35%{opacity:1}100%{opacity:1;filter:blur(0);transform:none}}
+.orbit .pile-art{animation:focusArt 1.1s 1.2s cubic-bezier(.3,0,.2,1) both}
+@keyframes focusArt{from{filter:blur(10px)}to{filter:blur(0)}}
+}
+@media (max-width:999px){.lens{display:none}.pile{animation-delay:calc(.2s + var(--k,0) * .1s)}}
+@media (prefers-reduced-motion:reduce){.orbit .lens,.ap-load{display:none}.orbit .pile,.orbit .pile-art{animation:none!important}.orbit .core .brand{animation:none;opacity:1;filter:none}}
+/*endap*/
+</style>
+<!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
+</head>
+<body>
+<!--ap--><div class="ap-load" aria-hidden="true"><div class="ap-bar"><span id="apFill"></span></div><p>yükleniyor · geçmek için dokunun</p></div>
+<script>
+(function(){
+var H=document.documentElement;if(!H.classList.contains('wait'))return;
+var seen=H.classList.contains('seen'),MIN=seen?700:3000,MAX=7000,t0=performance.now(),done=false,fill=document.getElementById('apFill');
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function imgs(){return [].slice.call(document.querySelectorAll('.hub img'))}
+function go(){if(done)return;done=true;fill&&(fill.style.width='100%');H.classList.remove('wait');H.classList.add('go');try{localStorage.setItem('hopSeen','1')}catch(e){}}
+if(reduce){go();return;}
+function tick(){if(done)return;var el=performance.now()-t0,L=imgs(),n=L.length||1,ok=L.filter(function(i){return i.complete}).length,lp=ok/n,tp=Math.min(1,el/MIN),p=Math.min(lp,tp);
+if(fill)fill.style.width=(p*100).toFixed(1)+'%';
+if((p>=1)||el>MAX){go();return;}requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+['click','keydown','touchstart'].forEach(function(ev){addEventListener(ev,function(){if(performance.now()-t0>300)go()},{once:true,passive:true})});
+})();
+</script><!--/ap-->
+<div style="background: #F2F3F5; color: #141414; font-family: Inter, sans-serif; font-size: 17px; line-height: 1.55">
+
+<section id="ust" class="hub" aria-label="Hop Yapım">
+<nav class="corner" aria-label="Kısa yollar"><a class="c-left" href="#sahne">Kültür Merkezimiz</a><a class="c-right" href="#iletisim">İletişim</a></nav>
+<div class="board orbit">
+<div class="ring" aria-hidden="true"></div><div class="lens" aria-hidden="true"></div><div class="core"><div class="brand"><h1 class="logo-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" role="img" aria-label="hop yapım"><defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></h1><div class="load" role="progressbar" aria-label="Yükleniyor"><span></span></div><p class="sub">Sinema · Dizi Film · Sahne Sanatları</p></div></div><div class="pile" style="--px:50.00%;--py:12.90%;--c:0.000;--s:-1.000;--k:0;--pr:-3deg;--cc:0.000;--cs:-1.000;--rc:18deg"><div class="pile-art"><a class="it kk" href="#sinema" style="--x:21%;--y:51%;--w:32%;--r:-6deg;--d:.05"><img src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak afişi"></a><a class="it" href="#sinema" style="--x:40%;--y:49%;--w:32%;--r:-2deg;--d:0.12"><img src="img/akif.jpg" alt="AKİF afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:60%;--y:49%;--w:32%;--r:2deg;--d:0.19"><img src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" loading="eager"></a><a class="it" href="#sinema" style="--x:79%;--y:51%;--w:32%;--r:6deg;--d:0.26"><img src="img/kafalar-karisik.jpg" alt="Kafalar Karışık afişi" loading="eager"></a></div><p class="lbl"><a href="#sinema">Sinema</a><span class="s">4 sinema ve TV filmi</span></p></div><div class="pile" style="--px:85.66%;--py:38.54%;--c:0.951;--s:-0.309;--k:1;--pr:2.5deg;--cc:0.866;--cs:-0.500;--rc:78deg"><div class="pile-art"><a class="it" href="#diziler" style="--x:50%;--y:50%;--w:90%;--r:0deg;--d:0.33"><img src="img/alman-kuzusu.jpg" alt="Alman Kuzusu afişi" loading="eager"></a></div><p class="lbl"><a href="#diziler">TV Dizisi</a><span class="s">Alman Kuzusu · TRT Türk</span></p></div><div class="pile" style="--px:72.04%;--py:80.01%;--c:0.588;--s:0.809;--k:2;--pr:-2deg;--cc:0.866;--cs:0.500;--rc:138deg"><div class="pile-art"><a class="it frame" href="#microdrama" style="--x:21%;--y:50%;--w:27%;--r:-6deg;--d:0.4"><b>Derinlerdeki<br>Tehlike</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:50%;--y:49%;--w:27%;--r:0deg;--d:0.47"><b>Perdenin<br>Arkasında</b><span>Yakında</span></a><a class="it frame" href="#microdrama" style="--x:79%;--y:50%;--w:27%;--r:6deg;--d:0.54"><b>Gizli<br>Tehlike</b><span>Yakında</span></a></div><p class="lbl"><a href="#microdrama">Microdrama</a><span class="s">3 dikey dizi · DramaPops</span></p></div><div class="pile" style="--px:27.96%;--py:80.01%;--c:-0.588;--s:0.809;--k:3;--pr:2.5deg;--cc:0.000;--cs:1.000;--rc:198deg"><div class="pile-art"><a class="it" href="#sahne-yapimlari" style="--x:50%;--y:50%;--w:52%;--r:0deg;--d:0.61"><img src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" loading="eager"></a></div><p class="lbl"><a href="#sahne-yapimlari">Müzikal</a><span class="s">İstanbul Efendisi Müzikali · <svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</span></p></div><div class="pile" style="--px:14.34%;--py:38.54%;--c:-0.951;--s:-0.309;--k:4;--pr:-2.5deg;--cc:-0.866;--cs:0.500;--rc:258deg"><div class="pile-art"><a class="it" href="#tiyatro" style="--x:34%;--y:50%;--w:38%;--r:-4deg;--d:0.68"><img src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" loading="eager"></a><a class="it" href="#tiyatro" style="--x:66%;--y:50%;--w:38%;--r:4deg;--d:0.75"><img src="img/inadina.jpg" alt="İnadına Yaşamak afişi" loading="eager"></a></div><p class="lbl"><a href="#tiyatro">Tiyatro Oyunları</a><span class="s">2 oyun · Hop Sahne</span></p></div>
+</div>
+<dl class="stats band" aria-label="Rakamlarla Hop Yapım"><div style="--j:0"><dt class="tag">TV Dizisi</dt><dd class="num">4 sezon · 52 bölüm</dd><dd class="det">TRT Türk</dd></div><div style="--j:1"><dt class="tag">Microdrama</dt><dd class="num">180 bölüm</dd><dd class="det">DramaPops · 3 dikey dizi</dd></div><div style="--j:2"><dt class="tag">Sinema</dt><dd class="num">4 film</dd><dd class="det">3 sinema · 1 TV filmi</dd></div><div style="--j:3"><dt class="tag">Sahne</dt><dd class="num">3 yapım</dd><dd class="det">1 müzikal · 2 oyun</dd></div><div style="--j:4"><dt class="tag">Ödül</dt><dd class="num"><svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</dd><dd class="det">İstanbul Efendisi Müzikali</dd></div><div style="--j:5"><dt class="tag">Seyirci</dt><dd class="num">+100.000</dd><dd class="det">tiyatro izleyicisi, her sezon</dd></div></dl>
+</section>
+
+<section class="hide-m" aria-label="Yapımlar ve faaliyetler" style="border-top: 1px solid #DCDEE1; border-bottom: 1px solid #DCDEE1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 32px">
+<a href="#sinema" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #6B6B6B">01</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Sinema Filmleri</span>
+</a>
+<a href="#diziler" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #6B6B6B">02</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Diziler</span>
+</a>
+<a href="#microdrama" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #6B6B6B">03</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Microdrama</span>
+</a>
+<a href="#sahne-yapimlari" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #6B6B6B">04</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Müzikal &amp; Tiyatro</span>
+</a>
+<a href="#faaliyetler" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #6B6B6B">05</span>
+<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Eğitimlerimiz</span>
+</a>
+</div>
+</section>
+
+<section id="sinema" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 01</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Sinema Filmleri</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #6B6B6B">2018'den bugüne üç sinema filmi ve bir TV filmi.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
+<article style="display: flex; flex-direction: column; gap: 14px">
+<img loading="lazy" src="img/kendinden-kacak.jpg" alt="Kendinden Kaçak film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: contain; background: #FFFFFF; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kendinden Kaçak</h3>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2021 · 1 sa 35 dk</p>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 14px">
+<img loading="lazy" src="img/akif.jpg" alt="AKİF film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">AKİF</h3>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2020 · 1 sa 51 dk<br>İstiklal Marşı'nın 100. yılı, T.C. Cumhurbaşkanlığı himayesinde</p>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 14px">
+<img loading="lazy" src="img/bircanlar.jpg" alt="Bircanlar Lokantası afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Bircanlar Lokantası</h3>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">TV filmi · 2019 · 1 sa 29 dk</p>
+</div>
+</article>
+<article style="display: flex; flex-direction: column; gap: 14px">
+<img loading="lazy" src="img/kafalar-karisik.jpg" alt="Kafalar Karışık film afişi" style="width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kafalar Karışık</h3>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">Sinema filmi · 2018 · 1 sa 35 dk</p>
+</div>
+</article>
+</div>
+</section>
+
+<section id="diziler" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 02</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Diziler</h2>
+</div>
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center">
+<img loading="lazy" src="img/alman-kuzusu.jpg" alt="Alman Kuzusu dizi afişi" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">TV dizisi · TRT Türk</p>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.03em">Alman Kuzusu</h3>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px 32px">
+<div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">sezon</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1; color: #FF7A1A">4</dd></div>
+<div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">bölüm</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1">52</dd></div>
+<div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">yayın yılları</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1">2022–24</dd></div>
+</dl>
+<p style="margin: 0; color: #4A4A4A">[DİZİNİN KISA TANITIMI]</p>
+</div>
+</article>
+</section>
+
+<section id="microdrama" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px; border-top: 1px solid #DCDEE1; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">Yapımlar · 03</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Microdrama</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #6B6B6B">Telefon için çekilen dikey diziler. DramaPops'ta yayınlanan üç yapım, her biri 60 bölüm (2024).</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px">
+<article style="background: #FFFFFF; border-radius: 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="width: 100%; max-width: 250px; box-sizing: border-box; padding: 8px; background: #F2F3F5; border: 1px solid #D0D2D6; border-radius: 24px">
+<div role="img" aria-label="Derinlerdeki Tehlike afişi için yer" style="aspect-ratio: 9 / 16; box-sizing: border-box; background: #FFFFFF; color: #6B6B6B; border-radius: 16px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-size: 15px">[AFİŞ: Derinlerdeki Tehlike]</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Derinlerdeki Tehlike</h3>
+<p style="margin: 0; font-size: 15px; color: #3A3A3A">Teknede yaz tatili yapan altı arkadaş ve aralarındaki entrika.</p>
+</div>
+</article>
+<article style="background: #FFFFFF; border-radius: 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="width: 100%; max-width: 250px; box-sizing: border-box; padding: 8px; background: #F2F3F5; border: 1px solid #D0D2D6; border-radius: 24px">
+<div role="img" aria-label="Perdenin Arkasında afişi için yer" style="aspect-ratio: 9 / 16; box-sizing: border-box; background: #FFFFFF; color: #6B6B6B; border-radius: 16px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; font-size: 15px">[AFİŞ: Perdenin Arkasında]</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Perdenin Arkasında</h3>
+<p style="margin: 0; font-size: 15px; color: #3A3A3A">Bir tiyatro oyununun provalarında beş kişilik ekip: entrika, aşk ve gizem.</p>
+</div>
+</article>
+<article style="background: #FFFFFF; border-radius: 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div style="width: 100%; max-width: 250px; box-sizing: border-box; padding: 8px; background: #F2F3F5; border: 1px solid #D0D2D6; border-radius: 24px">
+<img loading="lazy" src="img/gizli-tehlike.jpg" alt="Gizli Tehlike dizi afişi" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 16px; display: block">
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Gizli Tehlike</h3>
+<p style="margin: 0; font-size: 15px; color: #3A3A3A">Havuzlu lüks bir villada zengin bir iş adamı ile misafiri ressam arasındaki gizli bağ.</p>
+</div>
+</article>
+</div>
+</section>
+
+<section id="sahne-yapimlari" style="background: #FFFFFF; color: #0C0C0C">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 72px">
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Yapımlar · 04</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Müzikal</h2>
+</div>
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center">
+<img loading="lazy" src="img/istanbul-efendisi.jpg" alt="İstanbul Efendisi Müzikali afişi" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Müzikal · 2025</p>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.03em">İstanbul Efendisi Müzikali</h3>
+<p style="margin: 0; font-size: 19px; color: #33302B">Musahipzade Celal'in klasiği, Engin Alkan rejisi ve canlı orkestrayla. Prömiyer: 8 Ocak 2025, Hop Sahne.</p>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px 32px; font-size: 15px">
+<div><dt style="color: #6B675F">Yazan</dt><dd style="margin: 0; font-weight: 600">Musahipzade Celal</dd></div>
+<div><dt style="color: #6B675F">Yöneten</dt><dd style="margin: 0; font-weight: 600">Engin Alkan</dd></div>
+<div><dt style="color: #6B675F">Yapımcı</dt><dd style="margin: 0; font-weight: 600">Harun Türk, Huriye Evin</dd></div>
+</dl>
+<div style="border-top: 1px solid #C9C5BC; padding-top: 20px; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Ödüller</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 15px">
+<li style="display: flex; gap: 12px; align-items: flex-start">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"></path><path d="M17 5h3v2a3 3 0 0 1-3 3"></path><path d="M7 5H4v2a3 3 0 0 0 3 3"></path></svg>
+<span><strong>25. Direklerarası Seyirci Ödülleri</strong> · Yardımcı Kadın Oyuncu · Tutku Erten</span>
+</li>
+<li style="display: flex; gap: 12px; align-items: flex-start">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"></path><path d="M17 5h3v2a3 3 0 0 1-3 3"></path><path d="M7 5H4v2a3 3 0 0 0 3 3"></path></svg>
+<span><strong>12. Uluslararası Yeni Tiyatro &amp; Yeni Sinema Dergisi Emek ve Başarı Ödülleri</strong> · Müzikal Dalında En İyi Kadın Oyuncu · Nihan Büyükağaç</span>
+</li>
+<li style="display: flex; gap: 12px; align-items: flex-start">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"></path><path d="M17 5h3v2a3 3 0 0 1-3 3"></path><path d="M7 5H4v2a3 3 0 0 0 3 3"></path></svg>
+<span><strong>12. Uluslararası Yeni Tiyatro &amp; Yeni Sinema Dergisi Emek ve Başarı Ödülleri</strong> · Yardımcı Rolde En İyi Erkek Oyuncu · Sertaç Nicholas Güder</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+
+<div id="tiyatro" style="display: flex; flex-direction: column; gap: 40px; border-top: 2px solid #0C0C0C; padding-top: 56px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Yapımlar · 05</p>
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Tiyatro Oyunlarımız</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
+<article style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<img loading="lazy" src="img/dostlarla.jpg" alt="Dostlarla Akşam Yemeği afişi" style="width: 220px; max-width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Oyun · 2023</p>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em">Dostlarla Akşam Yemeği</h3>
+<p style="margin: 0; color: #33302B">Donald Margulies'in Pulitzer ödüllü oyunu. Hop Sahne'nin açılış yapımı.</p>
+<p style="margin: 0; font-size: 15px; color: #55514A">Yöneten: Özen Yula<br>Oynayanlar: Ahmet Tansu Taşanlar, Özge Borak, Ümit Kantarcılar, Derya Artemel</p>
+</div>
+</article>
+<article style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<img loading="lazy" src="img/inadina.jpg" alt="İnadına Yaşamak afişi" style="width: 220px; max-width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 6px; display: block">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C2410C">Tek kişilik oyun · Prömiyer 24 Ekim 2024</p>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em">İnadına Yaşamak</h3>
+<p style="margin: 0; color: #33302B">Gerçek yaşam öykülerinden yola çıkan, insanın yaşama direncini anlatan tek kişilik oyun.</p>
+<p style="margin: 0; font-size: 15px; color: #55514A">Yazan ve yöneten: Metin Balay<br>Oynayan: Arif Pişkin</p>
+</div>
+</article>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="faaliyetler" style="background: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 64px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Eğitimlerimiz</h2>
+<p style="margin: 0; max-width: 380px; color: #6B6B6B">Hop Atölye çatısı altında, sektörün içinden isimlerle eğitimler.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">MasterClass</p>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: -0.03em">MasterClass Yönetmenler Atölyesi</h3>
+<p style="margin: 0; color: #4A4A4A">Altı hafta, her cumartesi. Konuk yönetmenin seçtiği film birlikte izlenir, ardından film okuması ve yönetmenle söyleşi yapılır.</p>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px 20px">
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Ezel Akay fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Ezel Akay</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Ömer Faruk Sorak fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Ömer Faruk Sorak</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Sinan Çetin fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Sinan Çetin</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Hakan Ketche Kırkavaç fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Hakan “Ketche” Kırkavaç</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Reis Çelik fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Reis Çelik</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px">
+<div role="img" aria-label="Gani Müjde fotoğrafı için yer" style="aspect-ratio: 3 / 4; box-sizing: border-box; background: #E6E7EA; color: #6B6B6B; border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; font-size: 14px">[VESİKALIK]</div>
+<p style="margin: 0; font-family: Archivo, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2">Gani Müjde</p>
+</li>
+</ul>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: start; border-top: 1px solid #DCDEE1; padding-top: 56px">
+<img loading="lazy" src="img/atolye.jpg" alt="Atölye çalışmalarından kareler" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<article style="border-top: 2px solid #FF7A1A; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Oyunculuk Eğitimi</h3>
+<p style="margin: 0; color: #6B6B6B">[PROGRAM AÇIKLAMASI]</p>
+</article>
+<article style="border-top: 2px solid #FF7A1A; padding-top: 20px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Senaristlik Eğitimi</h3>
+<p style="margin: 0; color: #6B6B6B">[PROGRAM AÇIKLAMASI]</p>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sahne" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Kültür Merkezimiz</h2>
+<p style="margin: 0; max-width: 420px; color: #6B6B6B">Hop Sahne · House of Performance. Bakırköy'ün merkezinde üç salonlu sahne sanatları merkezi: tiyatro, konser, atölye ve gösterim.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">3 ayrı salon</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #6B6B6B">Salon 1</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Ana Salon</h3>
+</div>
+<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">460</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
+</li>
+<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #6B6B6B">Salon 2</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Alt Sahne</h3>
+</div>
+<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">120</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
+</li>
+<li style="background: #FFFFFF; border: 1px solid #DCDEE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #6B6B6B">Salon 3</span>
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em">Blackbox</h3>
+</div>
+<p style="margin: 0; display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: 64px; line-height: 1; color: #FF7A1A">110</span><span style="font-size: 17px; color: #4A4A4A">kişilik</span></p>
+</li>
+</ul>
+<p style="margin: 0; border-top: 1px solid #DCDEE1; border-bottom: 1px solid #DCDEE1; padding: 28px 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px"><span style="font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(48px, 7vw, 88px); line-height: 1">+100.000</span><span style="font-size: 20px; color: #4A4A4A">tiyatro izleyicisi, her sezon</span></p>
+</div>
+<img loading="lazy" src="img/salon-2.jpg" alt="Hop Sahne salonu ve fuayesi" style="width: 100%; height: clamp(240px, 36vw, 500px); object-fit: cover; border-radius: 6px; display: block">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<p style="margin: 0; color: #4A4A4A">Zeytinlik, Türkçü Sk. No:6, Bakırköy / İstanbul</p>
+<a href="https://www.hopsahne.com" style="border: 1px solid #BFC1C5; font-weight: 600; padding: 15px 26px; border-radius: 999px">Program ve bilet: hopsahne.com</a>
+</div>
+</section>
+
+<section id="hakkinda" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 96px; border-top: 1px solid #DCDEE1; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px 64px">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 80px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.15em">Neden<br>Hop Yapım</h2>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div style="border-top: 2px solid #FF7A1A; padding-top: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Her formatta üretim</h3>
+<p style="margin: 0; color: #4A4A4A">Sinema filmi, TV dizisi, dikey microdrama, müzikal ve tiyatro. Aynı yapımcı, aynı kalite çizgisi.</p>
+</div>
+<div style="border-top: 2px solid #FF7A1A; padding-top: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kanıtlanmış süreklilik</h3>
+<p style="margin: 0; color: #4A4A4A">Alman Kuzusu TRT Türk'te dört sezon, 52 bölüm yayınlandı. AKİF, T.C. Cumhurbaşkanlığı himayesinde çekildi.</p>
+</div>
+<div style="border-top: 2px solid #FF7A1A; padding-top: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Kendi sahnesi, kendi atölyesi</h3>
+<p style="margin: 0; color: #4A4A4A">Üç salonlu Hop Sahne ve Hop Atölye, hiçbir kurumdan destek almadan kuruldu. Oyuncu, yazar ve yönetmenle her gün aynı çatı altındayız.</p>
+</div>
+</div>
+</section>
+
+<footer id="iletisim" style="background: #FF7A1A; color: #0C0C0C">
+<div style="max-width: 1240px; margin: 0 auto; padding: 80px 32px 40px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(44px, 8vw, 112px); line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase">Birlikte<br>üretelim.</h2>
+<p style="margin: 0; max-width: 620px; font-size: 20px; font-weight: 500">Kanallar ve platformlar için yeni dizi, film ve microdrama projelerini konuşmaya hazırız.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 40px; font-size: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600">E-posta</span>
+<a href="mailto:[E-POSTA]" style="color: #0C0C0C; font-weight: 600; padding: 10px 0">[E-POSTA ADRESİ]</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600">Telefon</span>
+<span style="font-weight: 600; padding: 10px 0">[TELEFON]</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600">Adres</span>
+<span style="font-weight: 600; padding: 10px 0">Zeytinlik, Türkçü Sk. No:6, Bakırköy / İstanbul</span>
+</div>
+</div>
+<div style="border-top: 1px solid #0C0C0C; padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px; font-weight: 500">
+<span>© 2026 Hop Yapım</span>
+<span>Film · Dizi · Tiyatro · Sahne · Eğitim</span>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
