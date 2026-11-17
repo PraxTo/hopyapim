@@ -544,7 +544,7 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 /*endaud*/
 /*gold*/
 .orbit .pile[style*="--k:3;"]{--sa:#6A2BC4;--sb:#FF8A3D;background:linear-gradient(150deg,#FF8A3D 0%,#E5487A 50%,#6A2BC4 100%)!important;overflow:hidden;box-shadow:0 26px 50px -22px rgba(150,50,140,.6),inset 0 1px 0 rgba(255,255,255,.2)!important}
-.orbit .pile[style*="--k:3;"]::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 44%,rgba(255,255,255,.26) 50%,transparent 56%);transform:translateX(-60%);animation:goldSheen 6s 3.5s ease-in-out infinite;pointer-events:none;z-index:1}
+.orbit .pile[style*="--k:3;"]::after{display:none!important}
 @keyframes goldSheen{0%{transform:translateX(-60%)}35%,100%{transform:translateX(60%)}}
 .orbit .pile[style*="--k:3;"] .lbl,.orbit .pile[style*="--k:3;"] .pile-art{position:relative;z-index:2}
 @media (prefers-reduced-motion:reduce){.orbit .pile[style*="--k:3;"]::after{animation:none;display:none}}
