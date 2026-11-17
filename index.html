@@ -487,6 +487,14 @@ transform:translate(-50%,-50%) rotate(var(--pr,0deg));opacity:1;animation:mOut 1
 .band div:has(a[href="#sinema"]) .tag{background:#E8EEFB;border-color:#C5D3F3;color:#1D3A8F}
 .band div:has(a[href="#muzikal"]) .tag{background:#FBF2DF;border-color:#EFD9A6;color:#8A5E0B}
 /*endsec*/
+/*ak*/
+#diziler dl.ak-st{display:grid!important;grid-template-columns:repeat(3,auto)!important;justify-content:start;gap:0!important;border-top:1px solid #DCDEE1;border-bottom:1px solid #DCDEE1}
+#diziler dl.ak-st>div{padding:16px 28px 14px;border-left:1px solid #DCDEE1;gap:6px!important}
+#diziler dl.ak-st>div:first-child{border-left:0;padding-left:0}
+#diziler dl.ak-st dd{font-size:clamp(34px,3.2vw,46px)!important;color:#141414!important;white-space:nowrap;letter-spacing:-.02em}
+#diziler dl.ak-st dt{font-size:12px!important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#C2410C!important}
+@media (max-width:520px){#diziler dl.ak-st>div{padding:12px 14px}}
+/*endak*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -592,12 +600,12 @@ requestAnimationFrame(tick);
 <div style="display: flex; flex-direction: column; gap: 18px">
 <p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF7A1A">TV dizisi · TRT Türk</p>
 <h3 style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: clamp(34px, 4.5vw, 60px); line-height: 1; letter-spacing: -0.03em">Alman Kuzusu</h3>
-<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px 32px">
-<div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">sezon</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1; color: #FF7A1A">4</dd></div>
+<dl class="ak-st" style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px 32px">
+<div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">sezon</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1">4</dd></div>
 <div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">bölüm</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1">52</dd></div>
 <div style="display: flex; flex-direction: column-reverse; gap: 2px"><dt style="font-size: 15px; color: #6B6B6B">yayın yılları</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 900; font-size: 48px; line-height: 1">2022–24</dd></div>
 </dl>
-<p style="margin: 0; color: #4A4A4A">[DİZİNİN KISA TANITIMI]</p>
+<p style="margin: 0; color: #4A4A4A; font-size: 18px">Henüz üç yaşındayken Çankırılı Şerife teyzeye emanet edilen Jens'in hikâyesini anlatan komedi dizisi.</p>
 </div>
 </article>
 </section>
