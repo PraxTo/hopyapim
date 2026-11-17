@@ -493,6 +493,31 @@ transform:translate(-50%,-50%) rotate(var(--pr,0deg));opacity:1;animation:mOut 1
 /*endov*/
 #lmf a{color:#FFFFFF}#lmf a:hover{color:#F0883A}
 @media (max-width:600px){#lmf [style*="rotate(-7deg)"]{left:auto!important;right:-8px;top:-62px!important;transform:rotate(-7deg) scale(.72)!important;transform-origin:right center}#lmf [style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px 14px!important}#lmf [style*="font-size: 132px"]{font-size:104px!important}}
+/*tb*/
+.tb{position:fixed;top:0;left:0;right:0;z-index:60;height:64px;display:flex;align-items:center;gap:28px;padding:0 24px;background:rgba(242,243,245,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,20,20,.08);transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-sizing:border-box}
+html.tb-on .tb{transform:none}
+html.tb-on .corner{opacity:0;pointer-events:none}
+.corner{transition:opacity .25s}
+.tb-logo{flex:none;display:block;width:44px;height:44px}.tb-logo svg{width:100%;height:100%;display:block}
+.tb-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;min-width:0}
+.tb-nav a{position:relative;text-decoration:none;color:#141414;font:600 15px Inter,sans-serif;padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+.tb-nav a:hover{background:rgba(20,20,20,.06)}
+.tb-nav a.on{background:#141414;color:#fff}
+.tb-m{display:none!important}
+.tb-r{flex:none;display:flex;align-items:center;gap:10px}
+.tb-km{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font:700 13px Inter,sans-serif;padding:4px 14px 4px 4px;border-radius:999px;background:linear-gradient(135deg,#C8102E,#8E0B21);box-shadow:0 8px 18px -10px rgba(142,11,33,.7)}
+.tb-km img{width:30px;height:30px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1.5px rgba(255,255,255,.85)}
+.tb-il{text-decoration:none;color:#fff;font:700 13px Inter,sans-serif;padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#FF8A2A,#E8620C)}
+.tb-km.on,.tb-il.on{box-shadow:0 0 0 2px #141414}
+section[id],footer[id],.scr[id]{scroll-margin-top:0}
+#hakkinda,#faaliyetler,#lmf,#iletisim,#sahne{scroll-margin-top:64px}
+@media (max-width:1100px){.tb-nav a{padding:8px 10px;font-size:14px}.tb-km span{display:none}.tb-km{padding:4px}}
+@media (max-width:820px){.tb{height:56px;gap:10px;padding:0 0 0 14px}.tb-logo{width:38px;height:38px}.tb-r{display:none}.tb-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-right:14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 24px),transparent)}.tb-nav::-webkit-scrollbar{display:none}.tb-m{display:inline-block!important}.tb-km-m{color:#C8102E!important}.tb-il-m{color:#C2410C!important}.tb-nav a.on.tb-km-m,.tb-nav a.on.tb-il-m{color:#fff!important}}
+/*endtb*/
+/*frame*/
+#sinema article img,#muzikal article img,#tiyatro article img{box-sizing:border-box!important;padding:10px!important;background:#fff!important;border:1px solid #DCDEE1!important;border-radius:6px!important;outline:1px solid rgba(20,20,20,.06);outline-offset:-11px;box-shadow:0 2px 0 rgba(20,20,20,.03),0 28px 44px -26px rgba(20,20,20,.55)!important;transition:transform .35s,box-shadow .35s}
+#sinema article:hover img,#muzikal article:hover img,#tiyatro article:hover img{transform:translateY(-4px);box-shadow:0 2px 0 rgba(20,20,20,.03),0 36px 54px -26px rgba(20,20,20,.6)!important}
+/*endframe*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -515,6 +540,11 @@ requestAnimationFrame(tick);
 </script><!--/ap-->
 <div style="background: #F2F3F5; color: #141414; font-family: Inter, sans-serif; font-size: 17px; line-height: 1.55">
 
+<header class="tb" id="tb" aria-label="Site menüsü">
+<a class="tb-logo" href="#ust" aria-label="Hop Yapım · başa dön"><svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 1300 1270" aria-hidden="true"><defs><linearGradient id="og2" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(0)"><stop offset="0" stop-color="#FF7A1A"/><stop offset="1" stop-color="#C2410C"/></linearGradient></defs><g fill="none" stroke="#141414" stroke-width="88" stroke-linejoin="miter"><path d="M440 70 L120 126 V1003 H955 V430"/><path d="M120 615 C120 432 372 432 372 615 V815"/><circle cx="660" cy="625" r="150"/><circle cx="1112" cy="625" r="150"/></g><circle class="pdot" cx="1112" cy="625" r="108" fill="url(#og2)"/><rect x="76" y="1080" width="924" height="190" rx="22" fill="url(#og2)"/><text x="538" y="1222" text-anchor="middle" font-family="Jost, Poppins, sans-serif" font-weight="600" font-size="176" fill="#FFFFFF" letter-spacing="2">yapım</text></svg></a>
+<nav class="tb-nav"><a href="#sinema" data-s="sinema">Sinema</a><a href="#diziler" data-s="diziler">Dizi</a><a href="#microdrama" data-s="microdrama">Microdrama</a><a href="#muzikal" data-s="muzikal">Müzikal</a><a href="#tiyatro" data-s="tiyatro">Tiyatro</a><a href="#faaliyetler" data-s="faaliyetler">Eğitim</a><a href="#lmf" data-s="lmf">LMF</a><a class="tb-m tb-km-m" href="#sahne" data-s="sahne">Kültür Merkezi</a><a class="tb-m tb-il-m" href="#iletisim" data-s="iletisim">İletişim</a></nav>
+<div class="tb-r"><a class="tb-km" href="#sahne" data-s="sahne"><img src="img/ana-salon-k.jpg" alt=""><span>Kültür Merkezimiz</span></a><a class="tb-il" href="#iletisim" data-s="iletisim">İletişim</a></div>
+</header>
 <section id="ust" class="hub" aria-label="Hop Yapım">
 <nav class="corner" aria-label="Kısa yollar"><a class="c-left km-btn" href="#sahne"><span class="km-th" aria-hidden="true"><img src="img/ana-salon-k.jpg" alt=""></span><span class="km-tx"><b>Kültür Merkezimiz</b><small>Hop Sahne · 3 salon · 690 koltuk</small></span><svg class="km-ar" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a><a class="c-right" href="#iletisim">İletişim</a></nav>
 <div class="board orbit">
@@ -523,30 +553,7 @@ requestAnimationFrame(tick);
 <dl class="stats band" aria-label="Rakamlarla Hop Yapım"><div style="--j:0"><dt class="tag"><a class="bl" href="#sinema">Sinema</a></dt><dd class="num">4 film</dd><dd class="det">3 sinema · 1 TV filmi</dd></div><div style="--j:1"><dt class="tag"><a class="bl" href="#diziler">TV Dizisi</a></dt><dd class="num">4 sezon · 52 bölüm</dd><dd class="det">TRT Türk</dd></div><div style="--j:2"><dt class="tag"><a class="bl" href="#microdrama">Microdrama</a></dt><dd class="num">180 bölüm</dd><dd class="det">DramaPops · 3 dikey dizi</dd></div><div style="--j:3"><dt class="tag"><a class="bl" href="#muzikal">Ödül</a></dt><dd class="num"><svg class="cup" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>3 ödül</dd><dd class="det">İstanbul Efendisi Müzikali</dd></div><div style="--j:4"><dt class="tag"><a class="bl" href="#tiyatro">Sahne</a></dt><dd class="num">3 yapım</dd><dd class="det">1 müzikal · 2 oyun</dd></div><div class="b-aud" style="--j:5"><dt class="tag"><a class="bl" href="#sahne">Seyirci</a></dt><dd class="num">+100.000</dd><dd class="det">tiyatro izleyicisi, her sezon</dd></div></dl>
 </section>
 
-<section class="hide-m" aria-label="Yapımlar ve faaliyetler" style="border-top: 1px solid #DCDEE1; border-bottom: 1px solid #DCDEE1">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0 32px">
-<a href="#sinema" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #6B6B6B">01</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Sinema Filmleri</span>
-</a>
-<a href="#diziler" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #6B6B6B">02</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Diziler</span>
-</a>
-<a href="#microdrama" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #6B6B6B">03</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Microdrama</span>
-</a>
-<a href="#sahne-yapimlari" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #6B6B6B">04</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Müzikal &amp; Tiyatro</span>
-</a>
-<a href="#faaliyetler" style="padding: 32px 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #6B6B6B">05</span>
-<span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em">Eğitimlerimiz</span>
-</a>
-</div>
-</section>
+
 
 <section id="sinema" class="scr" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
@@ -980,6 +987,15 @@ f.addEventListener('submit',function(e){e.preventDefault();var msg='';
   body:JSON.stringify({ad_soyad:v('Ad Soyad'),kurum:v('Kurum'),email:v('email'),telefon:v('Telefon'),konu:v('Konu'),mesaj:(v('LMF')?'[LMF] '+v('LMF')+'\n\n':'')+(v('Mesaj')||'')})})
  .then(function(r){if(!r.ok)throw 0;f.reset();st.textContent='Teşekkürler, mesajınız bize ulaştı.'})
  .catch(function(){st.textContent='Gönderilemedi. Lütfen biraz sonra tekrar deneyin.'}).then(function(){bt.disabled=false})});})();
+</script>
+<script>
+(function(){var h=document.documentElement,hub=document.getElementById('ust');if(!hub||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){h.classList.toggle('tb-on',!e[0].isIntersecting)},{threshold:0,rootMargin:'-70px 0px 0px 0px'}).observe(hub);
+var links=[].slice.call(document.querySelectorAll('.tb [data-s]')),ids=['sinema','diziler','microdrama','muzikal','tiyatro','faaliyetler','sahne','lmf','iletisim'];
+var vis={};var io=new IntersectionObserver(function(es){es.forEach(function(x){vis[x.target.id]=x.isIntersecting?x.intersectionRatio:0});
+var best=null,bv=0;ids.forEach(function(i){if((vis[i]||0)>bv){bv=vis[i];best=i}});
+links.forEach(function(a){var on=a.dataset.s===best;a.classList.toggle('on',on);if(on&&a.parentNode.classList.contains('tb-nav')&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollTo({left:a.offsetLeft-60,behavior:'smooth'})}})},{threshold:[0,.15,.3,.5,.7,.9]});
+ids.forEach(function(i){var el=document.getElementById(i);if(el)io.observe(el)});})();
 </script>
 </body>
 </html>
