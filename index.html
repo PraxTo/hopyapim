@@ -492,7 +492,6 @@ transform:translate(-50%,-50%) rotate(var(--pr,0deg));opacity:1;animation:mOut 1
 /*ov*/
 @media (min-width:1000px){.orbit{max-width:calc((100vh - 170px) * 1.7)!important;margin-left:auto;margin-right:auto;width:100%}}
 /*endov*/
-#lmf a{color:#FFFFFF}#lmf a:hover{color:#F0883A}
 @media (max-width:600px){#lmf [style*="rotate(-7deg)"]{left:auto!important;right:-8px;top:-62px!important;transform:rotate(-7deg) scale(.72)!important;transform-origin:right center}#lmf [style*="repeat(4, minmax(0, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px 14px!important}#lmf [style*="font-size: 132px"]{font-size:104px!important}}
 /*tb*/
 .tb{position:fixed;top:0;left:0;right:0;z-index:60;height:64px;display:flex;align-items:center;gap:28px;padding:0 24px;background:rgba(242,243,245,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(20,20,20,.08);transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);box-sizing:border-box}
@@ -511,7 +510,7 @@ html.tb-on .corner{opacity:0;pointer-events:none}
 .tb-il{text-decoration:none;color:#fff;font:700 13px Inter,sans-serif;padding:10px 18px;border-radius:999px;background:linear-gradient(135deg,#FF8A2A,#E8620C)}
 .tb-km.on,.tb-il.on{box-shadow:0 0 0 2px #141414}
 section[id],footer[id],.scr[id]{scroll-margin-top:0}
-#hakkinda,#lmf,#iletisim{scroll-margin-top:64px}
+#hakkinda,#iletisim{scroll-margin-top:64px}
 @media (max-width:1100px){.tb-nav a{padding:8px 10px;font-size:14px}.tb-km span{display:none}.tb-km{padding:4px}}
 @media (max-width:820px){.tb{height:56px;gap:10px;padding:0 0 0 14px}.tb-logo{width:38px;height:38px}.tb-r{display:none}.tb-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding-right:14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 24px),transparent)}.tb-nav::-webkit-scrollbar{display:none}.tb-m{display:inline-block!important}.tb-km-m{color:#C8102E!important}.tb-il-m{color:#C2410C!important}.tb-nav a.on.tb-km-m,.tb-nav a.on.tb-il-m{color:#fff!important}}
 /*endtb*/
@@ -609,6 +608,66 @@ section[id],footer[id],.scr[id]{scroll-margin-top:0}
 .lh-t span{font:600 8px/1 Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#D9D9D9}
 .lmf-st{position:absolute;top:-14px;right:-30px;transform:rotate(6deg);font:800 9.5px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#E63B2E;padding:4px 9px;border-radius:999px;box-shadow:0 6px 14px -6px rgba(230,59,46,.8);white-space:nowrap}
 /*endlmfhub2*/
+/*l2*/
+.l2{background:#0E0E0E;color:#fff;font-family:Inter,system-ui,sans-serif}
+.l2 a{color:#fff}.l2 a:hover{color:#F0883A}
+.l2-w{max-width:1280px;margin:0 auto;padding:84px 32px 28px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
+.l2-main{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:40px;align-items:center}
+.l2-left{display:flex;flex-direction:column;gap:16px}
+.l2-k{margin:0;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F0883A}
+.l2-logo{position:relative;width:fit-content;display:flex;flex-direction:column;gap:7px;margin-top:6px}
+.l2-lmf{font:900 clamp(64px,7vw,104px)/.82 Inter,sans-serif;letter-spacing:-.02em}
+.l2-lmaf{font:800 clamp(16px,1.6vw,21px)/1.1 Inter,sans-serif;letter-spacing:.06em;white-space:nowrap}
+.l2-gn{display:flex;align-items:center;gap:10px}.l2-gn i{flex:1;height:1px;background:#fff}.l2-gn span{font-size:10.5px;letter-spacing:.32em;color:#D6D6D6;white-space:nowrap}
+.l2-stamp{position:absolute;top:-62px;left:calc(100% - 40px);transform:rotate(-7deg);display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 14px 6px;border:2.5px solid #FF4B3E;outline:1px solid #FF4B3E;outline-offset:-6px;border-radius:6px;background:rgba(255,75,62,.08);color:#FF4B3E;white-space:nowrap;text-transform:uppercase}
+.l2-stamp b{font:700 17px/1.1 Poppins,Inter,sans-serif;letter-spacing:.1em}.l2-stamp small{font:700 9px Inter,sans-serif;letter-spacing:.32em}
+.l2 h2{margin:6px 0 0;font:700 21px/1.3 Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.l2-p{margin:0;font-size:14.5px;line-height:1.6;color:#C4C4C4}
+.l2-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;background:#F0883A;color:#1A0E05!important;font-weight:700;text-decoration:none}
+.l2-btn:hover{background:#ff9a52}
+.l2-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.l2-c{background:#161616;border:1px solid #262626;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.l2-wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:20px}
+.l2-ct{flex:1 1 0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.l2-r{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F0883A}
+.l2 h3{margin:0;font:700 17px/1.25 Poppins,Inter,sans-serif;letter-spacing:-.01em}
+.l2-wide h3{font-size:22px}
+.l2-c p{margin:0;font-size:13px;line-height:1.5;color:#C4C4C4}
+.l2-certs{flex:1.3 1 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.l2-certs figure{margin:0;display:flex;flex-direction:column;gap:5px}
+.l2-certs img{width:100%;aspect-ratio:900/1272;object-fit:contain;border-radius:4px;background:#fff;display:block;max-height:230px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;transform-origin:center;cursor:zoom-in;image-rendering:auto}
+.l2-certs figure{position:relative}
+.l2-certs figure:hover{z-index:20}
+.l2-certs figure:hover img{transform:scale(1.9);box-shadow:0 30px 60px -10px rgba(0,0,0,.8)}
+.l2-certs figure:first-child img{transform-origin:left center}.l2-certs figure:last-child img{transform-origin:right center}
+.l2-wide{overflow:visible}
+.l2-certs{flex:1.6 1 0!important}
+.l2-certs figcaption{font-size:10.5px;line-height:1.25;color:#C4C4C4}
+.l2-eq{list-style:none;margin:4px 0 0;padding:0}
+.l2-eq li{display:flex;flex-direction:column;padding:6px 0;border-top:1px solid #262626;font-size:13px;font-weight:600}
+.l2-eq small{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#A6A6A6;font-weight:600}
+.l2-ok{display:flex;align-items:center;gap:7px;color:#8FD6A8!important;font-weight:600;border-top:1px solid #262626;padding-top:7px}
+.l2-ok i{width:7px;height:7px;border-radius:50%;background:#8FD6A8}
+.l2-sr{position:relative;aspect-ratio:16/9;border-radius:9px;overflow:hidden;margin-top:4px;background:#232323}
+.l2-sr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.l2-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;border:1.5px solid #fff;background:rgba(14,14,14,.6);display:flex;align-items:center;justify-content:center}
+.l2-s{font-weight:600;color:#fff!important}
+.l2-cast{margin-top:4px;background:#1E1E1E;border:1px solid #323232;border-radius:9px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.l2-cast small{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A6A6A6}
+.l2-cast b{font-size:14px}.l2-cast span{font-size:12px;color:#C4C4C4}
+.l2-cast em{font-style:normal;align-self:flex-start;margin-top:4px;padding:4px 12px;border-radius:999px;border:1px solid #F0883A;color:#F0883A;font-size:11px;font-weight:700}
+.l2-apply{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;border-top:1px solid #262626;padding-top:18px}
+.l2-ap-t{flex:1 1 520px;display:flex;flex-direction:column;gap:4px}
+.l2-ap-t small{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#A6A6A6}
+.l2-ap-t p{margin:0;font-size:14px;line-height:1.5;color:#D6D6D6}.l2-ap-t b{color:#fff}.l2-ap-t b.o{color:#F0883A}
+.l2-ap-l{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.l2-ap-l a{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
+.l2-out{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #F0883A}
+@media (min-width:1000px){.l2-w{min-height:100vh;justify-content:center}}
+@media (min-width:1000px) and (max-height:800px){.l2-w{gap:14px;padding-top:76px}.l2-p{display:none}.l2-c p:not(.l2-s):not(.l2-ok){display:none}.l2-certs img{max-height:150px}.l2-lmf{font-size:72px}.l2-sr{aspect-ratio:21/9}}
+@media (max-width:999px){.l2-main{grid-template-columns:1fr}.l2-grid{grid-template-columns:1fr}.l2-wide{flex-direction:column;align-items:stretch}.l2-certs{grid-template-columns:repeat(2,minmax(0,1fr))}.l2-certs img{max-height:none}.l2-stamp{left:auto;right:-6px;top:-50px;transform:rotate(-7deg) scale(.8)}.l2-w{padding:72px 20px 40px}}
+@media (min-width:1000px) and (max-height:700px){.l2-w{gap:10px;padding-top:72px;padding-bottom:14px}.l2-main{gap:28px}.l2-left{gap:10px}.l2-lmf{font-size:60px}.l2 h2{font-size:18px}.l2-certs img{max-height:120px}.l2-certs figcaption{display:none}.l2-c{padding:12px;gap:6px}.l2-eq li{padding:4px 0}.l2-eq li:nth-child(3){display:none}.l2-cast{padding:9px}.l2-apply{padding-top:10px}.l2-ap-t p{font-size:12.5px}.l2-stamp{top:-50px}}
+/*endl2*/
 </style>
 <!--aphead--><script>try{document.documentElement.classList.add('wait');if(localStorage.getItem('hopSeen'))document.documentElement.classList.add('seen')}catch(e){document.documentElement.classList.add('wait')}</script><!--/aphead-->
 </head>
@@ -848,158 +907,27 @@ requestAnimationFrame(tick);
 </div>
 </section>
 
-<section id="lmf" style="background: #0E0E0E; color: #FFFFFF; font-family: Inter, system-ui, sans-serif; min-height: 960px; box-sizing: border-box; padding: 72px 28px">
-<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
-
-<div style="display: flex; flex-wrap: wrap; gap: 60px; align-items: stretch">
-
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 28px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: #F0883A">YENİ PROJEMİZ</div>
-
-<div style="position: relative; width: fit-content; display: flex; flex-direction: column; gap: 10px">
-<div style="position: absolute; top: -84px; left: 168px; padding: 9px 18px 8px; border: 3px solid #FF4B3E; border-radius: 6px; outline: 1px solid #FF4B3E; outline-offset: -7px; background: rgba(255,75,62,0.08); color: #FF4B3E; transform: rotate(-7deg); display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; white-space: nowrap; font-family: Poppins, Inter, sans-serif; text-transform: uppercase"><span style="font-size: 22px; font-weight: 700; line-height: 1.1; letter-spacing: 0.1em">Çok Yakında</span><span style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 700; line-height: 1.2; letter-spacing: 0.34em">Tüm Dünyada</span></div>
-<div style="font-size: 132px; font-weight: 900; line-height: 0.82; letter-spacing: -0.02em">LMF</div>
-<div style="font-size: 27px; font-weight: 800; letter-spacing: 0.06em; line-height: 1.1; white-space: nowrap">LET'S MAKE A FILM</div>
-<div style="display: flex; align-items: center; gap: 12px">
-<div aria-hidden="true" style="flex: 1; height: 1px; background: #FFFFFF"></div>
-<div style="font-size: 12px; letter-spacing: 0.32em; color: #D6D6D6; white-space: nowrap">GLOBAL NETWORK</div>
-<div aria-hidden="true" style="flex: 1; height: 1px; background: #FFFFFF"></div>
+<section id="lmf" class="l2">
+<div class="l2-w">
+<div class="l2-main">
+<div class="l2-left">
+<p class="l2-k">Yeni projemiz</p>
+<div class="l2-logo" lang="en"><span class="l2-stamp"><b>Çok Yakında</b><small>Tüm Dünyada</small></span><div class="l2-lmf">LMF</div><div class="l2-lmaf">LET'S MAKE A FILM</div><div class="l2-gn"><i></i><span>GLOBAL NETWORK</span><i></i></div></div>
+<h2>Film sektörü için Global Network.</h2>
+<p class="l2-p">Senarist, yönetmen, yapımcı, oyuncu ve teknik ekip tek platformda buluşuyor. Eserini mühürle, işini göster, ekipmanını kiralamaya aç, yeni projelere ulaş.</p>
+<a class="l2-btn" href="https://letsmakeafilm.com">letsmakeafilm.com <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="l2-grid">
+<article class="l2-c l2-wide"><div class="l2-ct"><span class="l2-r">Senarist</span><h3>Eserini mühürle.</h3><p>Tek tık, dört mühür, karekodlu sertifika. Önce mühürle, sonra gönül rahatlığıyla paylaş.</p></div><div class="l2-certs"><figure><img src="img/sertifika-lmf.webp" alt="Örnek sertifika: LMF Dijital Mühür" loading="lazy"><figcaption>LMF Dijital Mühür</figcaption></figure><figure><img src="img/sertifika-ab.webp" alt="Örnek sertifika: AB Nitelikli Zaman Damgası" loading="lazy"><figcaption>AB Nitelikli Zaman Damgası</figcaption></figure><figure><img src="img/sertifika-opentimestamps.webp" alt="Örnek sertifika: OpenTimestamps" loading="lazy"><figcaption>OpenTimestamps</figcaption></figure><figure><img src="img/sertifika-tubitak.webp" alt="Örnek sertifika: TÜBİTAK Kamu SM" loading="lazy"><figcaption>TÜBİTAK Kamu SM</figcaption></figure></div></article>
+<article class="l2-c"><span class="l2-r">Teknik ekip</span><h3>Ekipmanını kiralamaya aç.</h3><ul class="l2-eq"><li><small>Kamera</small>ARRI Alexa Mini LF</li><li><small>Lens</small>Cooke S4/i set</li><li><small>Işık</small>Aputure LS 600d Pro</li></ul><p class="l2-ok"><i></i>Kiralamaya açık</p></article>
+<article class="l2-c"><span class="l2-r">Yönetmen · Görüntü yönetmeni</span><h3>Bırak işin konuşsun.</h3><div class="l2-sr"><img src="img/showreel.webp" alt="Örnek showreel karesi" loading="lazy"><span class="l2-play"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M7 4l14 8-14 8z"/></svg></span></div><p class="l2-s">Showreel 2026 · 2:14</p></article>
+<article class="l2-c"><span class="l2-r">Oyuncu · Kast direktörü</span><h3>Rol seni bulsun.</h3><div class="l2-cast"><small>Kast çağrısı · örnek</small><b>Başrol · Kadın</b><span>Oynama yaşı 25–35 · Sinema</span><em>Başvur</em></div></article>
 </div>
 </div>
-
-<div style="display: flex; flex-direction: column; gap: 14px">
-<h2 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em">Film sektörü için Global Network.</h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C4C4C4">Senarist, yönetmen, yapımcı, oyuncu ve teknik ekip tek platformda buluşuyor. Eserini mühürle, işini göster, ekipmanını kiralamaya aç, yeni projelere ulaş.</p>
+<div class="l2-apply">
+<div class="l2-ap-t"><small>Hop Yapım'a başvuru</small><p>Bize göndermek istediğiniz bir proje varsa ya da projelerimizde oyuncu veya teknik ekip olarak yer almak istiyorsanız, LMF'de profilinizi oluşturun; <b>proje adını ya da profil bağlantınızı</b> bizimle paylaşın. <b class="o">Tüm başvuruları okuyoruz.</b></p></div>
+<div class="l2-ap-l"><a href="https://letsmakeafilm.com">Proje yükle <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a><a href="https://letsmakeafilm.com">Profil oluştur <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a><a class="l2-out" href="#iletisim">Bize iletin <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a></div>
 </div>
-
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
-<a href="https://letsmakeafilm.com" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px; background: #F0883A; color: #1A0E05; font-size: 16px; font-weight: 700; text-decoration: none">letsmakeafilm.com
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
-</a>
-</div>
-</div>
-
-<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-
-<div style="background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
-<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F0883A">SENARİST</div>
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em">Eserini mühürle.</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #C4C4C4">Tek tık, dört mühür, karekodlu sertifika. Önce mühürle, sonra gönül rahatlığıyla paylaş.</p>
-</div>
-<div style="flex: 1 1 340px; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<img src="img/sertifika-lmf.webp" alt="Örnek sertifika: LMF Dijital Mühür" style="display: block; width: 100%; aspect-ratio: 900 / 1272; object-fit: cover; border-radius: 3px; background: #FFFFFF">
-<div style="font-size: 12px; line-height: 1.3; color: #C4C4C4">LMF Dijital Mühür</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<img src="img/sertifika-ab.webp" alt="Örnek sertifika: AB Nitelikli Zaman Damgası" style="display: block; width: 100%; aspect-ratio: 900 / 1272; object-fit: cover; border-radius: 3px; background: #FFFFFF">
-<div style="font-size: 12px; line-height: 1.3; color: #C4C4C4">AB Nitelikli Zaman Damgası</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<img src="img/sertifika-opentimestamps.webp" alt="Örnek sertifika: OpenTimestamps" style="display: block; width: 100%; aspect-ratio: 900 / 1272; object-fit: cover; border-radius: 3px; background: #FFFFFF">
-<div style="font-size: 12px; line-height: 1.3; color: #C4C4C4">OpenTimestamps</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<img src="img/sertifika-tubitak.webp" alt="Örnek sertifika: TÜBİTAK Kamu SM" style="display: block; width: 100%; aspect-ratio: 900 / 1272; object-fit: cover; border-radius: 3px; background: #FFFFFF">
-<div style="font-size: 12px; line-height: 1.3; color: #C4C4C4">TÜBİTAK Kamu SM</div>
-</div>
-</div>
-</div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
-
-<div style="flex: 1 1 210px; min-width: 0; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F0883A">TEKNİK EKİP</div>
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em">Ekipmanını kiralamaya aç.</h3>
-<div style="margin-top: auto; padding-top: 8px; display: flex; flex-direction: column">
-<div style="display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-top: 1px solid #262626">
-<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #A6A6A6">KAMERA</div>
-<div style="font-size: 14px; font-weight: 600">ARRI Alexa Mini LF</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-top: 1px solid #262626">
-<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #A6A6A6">LENS</div>
-<div style="font-size: 14px; font-weight: 600">Cooke S4/i set</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-top: 1px solid #262626">
-<div style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #A6A6A6">IŞIK</div>
-<div style="font-size: 14px; font-weight: 600">Aputure LS 600d Pro</div>
-</div>
-<div style="display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid #262626; font-size: 13px; font-weight: 600; color: #8FD6A8">
-<span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #8FD6A8"></span>Kiralamaya açık
-</div>
-</div>
-</div>
-
-<div style="flex: 1 1 210px; min-width: 0; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F0883A">YÖNETMEN · GÖRÜNTÜ YÖNETMENİ</div>
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em">Bırak işin konuşsun.</h3>
-<div style="margin-top: auto; padding-top: 8px; display: flex; flex-direction: column; gap: 10px">
-<div style="position: relative; aspect-ratio: 16 / 9; background: #232323; border: 1px solid #323232; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden">
-<img src="img/showreel.webp" alt="Örnek showreel karesi" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
-<div style="position: relative; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #FFFFFF; background: rgba(14,14,14,0.6); display: flex; align-items: center; justify-content: center">
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M7 4l14 8-14 8z"></path></svg>
-</div>
-</div>
-<div style="font-size: 13px; font-weight: 600">Showreel 2026 · 2:14</div>
-<div style="font-size: 13px; line-height: 1.45; color: #C4C4C4">İş örnekleri ve set görüntüleri tek profilde.</div>
-</div>
-</div>
-
-<div style="flex: 1 1 210px; min-width: 0; background: #161616; border: 1px solid #262626; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #F0883A">OYUNCU · KAST DİREKTÖRÜ</div>
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 19px; font-weight: 700; line-height: 1.25; letter-spacing: -0.02em">Rol seni bulsun.</h3>
-<div style="margin-top: auto; padding-top: 8px; display: flex; flex-direction: column; gap: 10px">
-<div style="background: #1E1E1E; border: 1px solid #323232; border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #A6A6A6">KAST ÇAĞRISI · ÖRNEK</div>
-<div style="font-size: 15px; font-weight: 700">Başrol · Kadın</div>
-<div style="font-size: 13px; color: #C4C4C4">Oynama yaşı 25–35 · Sinema</div>
-<div aria-hidden="true" style="margin-top: 6px; align-self: flex-start; padding: 6px 14px; border-radius: 999px; border: 1px solid #F0883A; color: #F0883A; font-size: 12px; font-weight: 700">Başvur</div>
-</div>
-<div style="font-size: 13px; line-height: 1.45; color: #C4C4C4">Kast dosyanı oluştur, kast çağrılarına başvur.</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div style="border-top: 1px solid #262626; padding-top: 28px; display: flex; flex-direction: column; gap: 20px">
-<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: #A6A6A6">HOP YAPIM'A BAŞVURU</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; background: #161616; border: 1px solid #262626; border-left: 3px solid #F0883A; border-radius: 12px; padding: 18px 22px">
-<p style="margin: 0; flex: 1 1 420px; font-size: 16px; line-height: 1.55; color: #E6E6E6">Bize göndermek istediğiniz bir proje varsa ya da projelerimizde oyuncu veya teknik ekip olarak yer almak istiyorsanız, LMF'de profilinizi oluşturun. Ardından <b style="color:#FFFFFF">proje adını ya da profil bağlantınızı</b> bizimle paylaşın. <b style="color:#F0883A">Tüm başvuruları okuyoruz.</b></p>
-<a href="#iletisim" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #F0883A; font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap">Bize iletin
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px 48px">
-
-<div style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #F0883A; padding-top: 5px">01</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Projenizi gönderin</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #C4C4C4">Senaryonuzu LMF'ye yükleyip mühürleyin, proje adını bize iletin.</p>
-<a href="https://letsmakeafilm.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 700; text-decoration: none">Proje yükle
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
-</a>
-</div>
-</div>
-
-<div style="flex: 1 1 260px; min-width: 0; display: flex; gap: 16px">
-<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: #F0883A; padding-top: 5px">02</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-family: Poppins, Inter, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">Takıma katılın</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #C4C4C4">Oyuncu ya da teknik ekip olarak LMF'de profilinizi oluşturun, bağlantısını bize iletin.</p>
-<a href="https://letsmakeafilm.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; font-weight: 700; text-decoration: none">Profil oluştur
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
-</a>
-</div>
-</div>
-
-
-
-</div>
-</div>
-
 </div>
 </section>
 
